@@ -1,0 +1,8 @@
+rootProject.name = 'asaka-bpm'
+include 'asaka-bpm-api'
+include 'asaka-orm-model'
+include 'asaka-bpm-orm'
+include 'bpm-common'
+include 'asaka-microzime-model'
+include 'asaka-refbook'
+

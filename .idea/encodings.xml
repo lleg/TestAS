@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/AccountListType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/AccountType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/AdditionalContactType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/AdditionalIncomeType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/AddressListType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/AddressType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/AppSystemIDType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/Application.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/ApplicationHistory.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/AttachedDocument.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/ClientType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/CommentType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/CurrencyType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/CurrentLoanType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/CustomerIDType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/DepositInfoType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/Document.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/EmailListType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/EmailType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/JobInfoType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/LoanType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/NotificationType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/PhoneListType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/PhoneType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/RelatedPerson.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asaka-microzime-model/src/main/java/ru/digitalspirit/asaka/microzime/model/TrusteeStatusType.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

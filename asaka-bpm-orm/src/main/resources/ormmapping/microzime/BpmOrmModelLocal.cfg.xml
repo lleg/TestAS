@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- properties -->
+
+		<property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+		<property name="connection.url">jdbc:oracle:thin:@85.192.32.133:1521/BPMDB</property>
+		<property name="connection.username">NFO_TEST</property>
+		<property name="connection.password">NFO_TEST</property>
+		<property name="hibernate.id.new_generator_mappings">true</property>
+		<property name="hibernate.dialect">ru.digitalspirit.asaka.bpm.orm.configuration.Oracle10gDialectExtended</property>
+		<property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.acquire_increment">1</property>
+		<property name="hibernate.c3p0.idle_test_period">0</property>
+		<property name="hibernate.c3p0.min_size">1</property>
+		<property name="hibernate.c3p0.max_size">15</property>
+		<property name="hibernate.c3p0.timeout">0</property>
+		<property name="hibernate.c3p0.privilegeSpawnedThreads">true</property>
+		<property name="hibernate.c3p0.contextClassLoaderSource">library</property>
+		<property name="show_sql">false</property>
+		<property name="hbm2ddl.auto">create-drop</property>
+		<!--property name="hbm2ddl.auto">validate</property-->
+		<property name="query.substitutions">true 1, false 0, yes 'Y', no 'N'</property>
+
+		<property name="hibernate.event.merge.entity_copy_observer">allow</property>
+		<property name="hibernate.jdbc.use_streams_for_binary">false</property>
+
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.ApplicationEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.AdditionalContactEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.AdditionalIncomeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.AddressEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.ApplicationHistoryEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.AttachedDocumentEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.ClientEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.CurrentLoanEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.DepositInfoEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.DocumentEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.JobInfoEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.LoanEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.PhoneEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.RelatedPersonEntity"/>
+
+	</session-factory>
+</hibernate-configuration>

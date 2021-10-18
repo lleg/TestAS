@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+ "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+   	<!-- properties -->
+		<property name="dialect">ru.digitalspirit.asaka.bpm.orm.configuration.Oracle10gDialectExtended</property>
+		<property name="connection.datasource">jdbc/rosnfo_guarantee</property>
+		<property name="hibernate.event.merge.entity_copy_observer">allow</property>
+		<property name="hibernate.jdbc.use_streams_for_binary">false</property>
+		<property name="show_sql">false</property>
+
+        <property name="hbm2ddl.auto">validate</property>
+        <property name="query.substitutions">true 1, false 0, yes 'Y', no 'N'</property>
+
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.ApplicationEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.AdditionalContactEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.AdditionalIncomeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.AddressEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.ApplicationHistoryEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.AttachedDocumentEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.ClientEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.CurrentLoanEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.DepositInfoEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.DocumentEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.JobInfoEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.LoanEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.PhoneEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.RelatedPersonEntity"/>
+
+
+    </session-factory>
+</hibernate-configuration>
