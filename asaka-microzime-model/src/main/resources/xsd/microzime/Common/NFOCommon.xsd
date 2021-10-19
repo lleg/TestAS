@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- edited with XMLSpy v2018 rel. 2 sp1 (x64) (http://www.altova.com) by MESMERiZE (MSM) -->
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <!--Created with Liquid Studio 2019 (https://www.liquid-technologies.com)-->
 <xs:schema xmlns:nfocomm="http://NFOCommon.NFO.ru" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://NFOCommon.NFO.ru" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:complexType name="AccountType">
@@ -548,7 +548,7 @@
 					<xs:documentation>Дата начало работы</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="lastJobExperienceMonths" type="xs:integer" minOccurs="0">
+			<xs:element name="LastJobExperienceMonths" type="xs:integer" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Стаж на последнем месте работы в месяцах</xs:documentation>
 				</xs:annotation>
@@ -580,7 +580,7 @@
 					<xs:documentation>Идентификатор</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="sum" type="xs:decimal" minOccurs="0">
+			<xs:element name="Sum" type="xs:decimal" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Размер дополнительного дохода</xs:documentation>
 				</xs:annotation>
@@ -602,7 +602,7 @@
 					<xs:documentation>Идентификатор</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="sum" type="xs:decimal" minOccurs="0">
+			<xs:element name="Sum" type="xs:decimal" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Сумма</xs:documentation>
 				</xs:annotation>
@@ -624,9 +624,14 @@
 					<xs:documentation>Идентификатор</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="sum" type="xs:decimal" minOccurs="0">
+			<xs:element name="Sum" type="xs:decimal" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Размер кредита</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MonthlyPayment" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ежемесячный платеж</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="CreditBank" type="xs:string" minOccurs="0">
@@ -656,7 +661,7 @@
 					<xs:documentation>Отношение к заемщику</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Birthdate" type="xs:date" minOccurs="0">
+			<xs:element name="BirthDate" type="xs:date" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Дата рождения</xs:documentation>
 				</xs:annotation>

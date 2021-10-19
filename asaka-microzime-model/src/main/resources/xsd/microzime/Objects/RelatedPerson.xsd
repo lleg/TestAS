@@ -13,13 +13,13 @@
 				<xs:annotation>
 					<xs:documentation>Идентификатор записи в BPM</xs:documentation>
 				</xs:annotation>
-			</xs:element>			
+			</xs:element>
 			<xs:element name="TrusteeStatus" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Отношение к клиенту</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-				<xs:element name="ClientUID" type="xs:string" minOccurs="0">
+			<xs:element name="ClientUID" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Клиент UID (код АБС)</xs:documentation>
 				</xs:annotation>
@@ -38,7 +38,7 @@
 				<xs:annotation>
 					<xs:documentation>Код клиента CRM</xs:documentation>
 				</xs:annotation>
-			</xs:element>		
+			</xs:element>
 			<xs:element name="FinalRiskLevel" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Рейтинг клиента</xs:documentation>
@@ -48,7 +48,7 @@
 				<xs:annotation>
 					<xs:documentation>ФИО/Название</xs:documentation>
 				</xs:annotation>
-			</xs:element>		
+			</xs:element>
 			<xs:element name="LastName" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Фамилия (ФЛ)</xs:documentation>
@@ -83,12 +83,12 @@
 				<xs:annotation>
 					<xs:documentation>Наименование страны гражданства</xs:documentation>
 				</xs:annotation>
-			</xs:element>		
+			</xs:element>
 			<xs:element name="INN" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>ИНН</xs:documentation>
 				</xs:annotation>
-			</xs:element>	
+			</xs:element>
 			<xs:element name="PinFl" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>ПИНФЛ</xs:documentation>
@@ -104,7 +104,7 @@
 					<xs:documentation>Адрес</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="RegAddrEqualseResAddr" type="xs:boolean" minOccurs="0">
+			<xs:element name="RegAddrEqualsResAddr" type="xs:boolean" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Адрес проживания совпадает с адресом регистрации?</xs:documentation>
 				</xs:annotation>
@@ -114,12 +114,12 @@
 					<xs:documentation>Наличие созаемщика?</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Phone" type="nfocomm:PhoneType" minOccurs="0">
+			<xs:element name="Phone" type="nfocomm:PhoneType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Основной мобильный телефон</xs:documentation>
+					<xs:documentation>Телефон</xs:documentation>
 				</xs:annotation>
-			</xs:element>	
-		    <xs:element name="JobInfo" type="nfocomm:JobInfoType" minOccurs="0">
+			</xs:element>
+			<xs:element name="JobInfo" type="nfocomm:JobInfoType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Информация о месте работы</xs:documentation>
 				</xs:annotation>
@@ -138,7 +138,7 @@
 				<xs:annotation>
 					<xs:documentation>Наличие автомобиля</xs:documentation>
 				</xs:annotation>
-			</xs:element>		
+			</xs:element>
 			<xs:element name="IsRealEstate" type="xs:boolean" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Наличие недвижимого имущества</xs:documentation>
@@ -168,7 +168,7 @@
 				<xs:annotation>
 					<xs:documentation>Кол-во детей в возрасте от 16 лет и более</xs:documentation>
 				</xs:annotation>
-			</xs:element>				
+			</xs:element>
 			<xs:element name="Education" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Образование</xs:documentation>
@@ -184,7 +184,7 @@
 					<xs:documentation>Клиент достиг пенсионного возраста?</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="NinpsAccount" type="xs:string" minOccurs="0">
+			<xs:element name="NinpsAccountBank" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Банк в котором открыт счет НИНПС открыт</xs:documentation>
 				</xs:annotation>
