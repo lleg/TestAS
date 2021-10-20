@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <xs:schema xmlns:grn="http://Application.NFO.ru" xmlns:clnt="http://Client.NFO.ru" xmlns:ln="http://Loan.NFO.ru" xmlns:ins="http://Insurance.NFO.ru" xmlns:atd="http://AttachedDocument.NFO.ru" xmlns:apph="http://ApplicationHistory.NFO.ru" xmlns:nfocomm="http://NFOCommon.NFO.ru" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://Guaranty.NFO.ru" targetNamespace="http://Guaranty.NFO.ru" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:import namespace="http://Client.NFO.ru" schemaLocation="Client.xsd"/>
 	<xs:import namespace="http://Loan.NFO.ru" schemaLocation="Loan.xsd"/>
@@ -31,6 +32,21 @@
 			<xs:element name="Status" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Статус Заявки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Decision" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Решение по Заявке</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VerificationComment" type="nfocomm:CommentType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Комментарий Верификатора</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CreditAdministratorComment" type="nfocomm:CommentType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Комментарий Кредитного администратора</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ClaimDate" type="xs:dateTime" minOccurs="0">
