@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://AttachedDocument.NFO.ru" targetNamespace="http://AttachedDocument.NFO.ru" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:complexType name="AttachedDocument">
 		<xs:annotation>
-			<xs:documentation>Сканы документов клиента и документов по БГ</xs:documentation>
+			<xs:documentation>Документы, связанные с заявкой</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="id" type="xs:integer" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Идентификатор записи в oBPM</xs:documentation>
+					<xs:documentation>Идентификатор записи в BPM</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="GUID" type="xs:string" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Уникальный идентификатор документа в oBPM</xs:documentation>
+					<xs:documentation>Уникальный идентификатор документа в BPM</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="DocumentType" type="xs:string" minOccurs="0">
@@ -28,11 +29,6 @@
 			<xs:element name="DocumentDate" type="xs:date" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Дата создания документа</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OperationType" type="xs:string" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Вид операции (Клиент/Банковская гарантия)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>

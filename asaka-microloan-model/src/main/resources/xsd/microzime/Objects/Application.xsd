@@ -81,7 +81,7 @@
 			</xs:element>
 			<xs:element name="AttachedDocuments" type="atd:AttachedDocument" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Приложенные к заявке сканы документов</xs:documentation>
+					<xs:documentation>Приложенные к заявке документы</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ApplicationHistory" type="apph:ApplicationHistory" minOccurs="0" maxOccurs="unbounded">

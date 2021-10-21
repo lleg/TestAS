@@ -106,7 +106,12 @@
 			</xs:element>
 			<xs:element name="IsCoBorrowed" type="xs:boolean" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Наличие созаемщика?</xs:documentation>
+					<xs:documentation>Наличие созаемщика</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IsGuarantor" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Наличие поручителя</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Phone" type="nfocomm:PhoneType" minOccurs="0" maxOccurs="unbounded">
