@@ -1,0 +1,70 @@
+ru/digitalspirit/asaka/microloan/model/EmailListType.java
+ ru.digitalspirit.asaka.microloan.model.EmailListType
+ru/digitalspirit/asaka/microloan/model/Adapter2.java
+ ru.digitalspirit.asaka.microloan.model.Adapter2
+ru/digitalspirit/asaka/microloan/model/ClientType.java
+ ru.digitalspirit.asaka.microloan.model.ClientType
+ru/digitalspirit/asaka/microloan/model/JobInfoType.java
+ ru.digitalspirit.asaka.microloan.model.JobInfoType
+ru/digitalspirit/asaka/microloan/model/CurrentLoanType.java
+ ru.digitalspirit.asaka.microloan.model.CurrentLoanType
+ru/digitalspirit/asaka/microloan/model/AccountType.java
+ ru.digitalspirit.asaka.microloan.model.AccountType
+ru/digitalspirit/asaka/microloan/model/AddressType.java
+ ru.digitalspirit.asaka.microloan.model.AddressType
+ru/digitalspirit/asaka/microloan/model/CustomerIDType.java
+ ru.digitalspirit.asaka.microloan.model.CustomerIDType
+ru/digitalspirit/asaka/microloan/model/AddressListType.java
+ ru.digitalspirit.asaka.microloan.model.AddressListType
+ru/digitalspirit/asaka/microloan/model/PhoneType.java
+ ru.digitalspirit.asaka.microloan.model.PhoneType
+ru/digitalspirit/asaka/microloan/model/RelatedPerson.java
+ ru.digitalspirit.asaka.microloan.model.RelatedPerson
+ru/digitalspirit/asaka/microloan/model/AppSystemIDType.java
+ ru.digitalspirit.asaka.microloan.model.AppSystemIDType
+ru/digitalspirit/asaka/microloan/model/ApplicationHistory.java
+ ru.digitalspirit.asaka.microloan.model.ApplicationHistory
+ru/digitalspirit/asaka/microloan/model/TrusteeStatusType.java
+ ru.digitalspirit.asaka.microloan.model.TrusteeStatusType
+ru/digitalspirit/asaka/microloan/model/Document.java
+ ru.digitalspirit.asaka.microloan.model.Document
+ru/digitalspirit/asaka/microloan/model/NotificationType.java
+ ru.digitalspirit.asaka.microloan.model.NotificationType
+ru/digitalspirit/asaka/microloan/model/DepositInfoType.java
+ ru.digitalspirit.asaka.microloan.model.DepositInfoType
+ru/digitalspirit/asaka/microloan/model/AdditionalContactType.java
+ ru.digitalspirit.asaka.microloan.model.AdditionalContactType
+ru/digitalspirit/asaka/microloan/model/Adapter3.java
+ ru.digitalspirit.asaka.microloan.model.Adapter3
+ru/digitalspirit/asaka/microloan/model/Application.java
+ ru.digitalspirit.asaka.microloan.model.Application
+ru/digitalspirit/asaka/microloan/model/package-info.java
+ ru.digitalspirit.asaka.microloan.model.package-info
+ru/digitalspirit/asaka/microloan/model/Adapter1.java
+ ru.digitalspirit.asaka.microloan.model.Adapter1
+ru/digitalspirit/asaka/microloan/model/CommentType.java
+ ru.digitalspirit.asaka.microloan.model.CommentType
+ru/digitalspirit/asaka/microloan/model/ObjectFactory.java
+ ru.digitalspirit.asaka.microloan.model.ObjectFactory
+ru/digitalspirit/asaka/microloan/model/AccountListType.java
+ ru.digitalspirit.asaka.microloan.model.AccountListType
+ru/digitalspirit/asaka/microloan/model/LoanType.java
+ ru.digitalspirit.asaka.microloan.model.LoanType
+ru/digitalspirit/asaka/microloan/util/DTOGenerationUtil.java
+ ru.digitalspirit.asaka.microloan.util.DTOGenerationUtil
+ru/digitalspirit/asaka/microloan/model/EmailType.java
+ ru.digitalspirit.asaka.microloan.model.EmailType
+ru/digitalspirit/asaka/microloan/model/AttachedDocument.java
+ ru.digitalspirit.asaka.microloan.model.AttachedDocument
+ru/digitalspirit/asaka/microloan/model/CurrencyType.java
+ ru.digitalspirit.asaka.microloan.model.CurrencyType
+ru/digitalspirit/asaka/microloan/model/AdditionalIncomeType.java
+ ru.digitalspirit.asaka.microloan.model.AdditionalIncomeType
+ru/digitalspirit/asaka/microloan/util/DateTypeConverter.java
+ ru.digitalspirit.asaka.microloan.util.DateTypeConverter
+ru/digitalspirit/asaka/microloan/model/PhoneListType.java
+ ru.digitalspirit.asaka.microloan.model.PhoneListType
+ru/digitalspirit/asaka/microloan/util/XSDField.java
+ ru.digitalspirit.asaka.microloan.util.XSDField
+ru/digitalspirit/asaka/microloan/model/InsuranceType.java
+ ru.digitalspirit.asaka.microloan.model.InsuranceType

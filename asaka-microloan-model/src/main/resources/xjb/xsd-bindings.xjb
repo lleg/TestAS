@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jxb:bindings version="2.1"
+              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc">
+
+    <jxb:globalBindings>
+        <!-- use java.sql instead of XMLGregorianCalendar -->
+        <jxb:javaType name="java.sql.Timestamp" xmlType="xs:dateTime"
+                      parseMethod="ru.digitalspirit.asaka.microloan.util.DateTypeConverter.parseDateTime"
+                      printMethod="ru.digitalspirit.asaka.microloan.util.DateTypeConverter.printDateTime"/>
+
+        <jxb:javaType name="java.sql.Date" xmlType="xs:date"
+                      parseMethod="ru.digitalspirit.asaka.microloan.util.DateTypeConverter.parseDate"
+                      printMethod="ru.digitalspirit.asaka.microloan.util.DateTypeConverter.printDate"/>
+
+        <jxb:javaType name="java.sql.Time" xmlType="xs:time"
+                      parseMethod="ru.digitalspirit.asaka.microloan.util.DateTypeConverter.parseTime"
+                      printMethod="ru.digitalspirit.asaka.microloan.util.DateTypeConverter.printTime"/>
+    </jxb:globalBindings>
+</jxb:bindings>
