@@ -1,6 +1,7 @@
 package ru.digitalspirit.asaka.bpm.entity;
 
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,13 +9,14 @@ import javax.persistence.*;
 import java.math.BigInteger;
 import java.sql.Date;
 import java.util.List;
+import java.util.Objects;
 
 @Getter
 @Setter
+@Builder
 @Entity
 @Table(name = "RELATED_PERSON")
 public class RelatedPersonEntity {
-
     @Id
     @GeneratedValue(generator = "SEQ_RELATED_PERSON")
     @SequenceGenerator(name = "SEQ_RELATED_PERSON", sequenceName = "SEQ_RELATED_PERSON", allocationSize = 1)
@@ -40,7 +42,7 @@ public class RelatedPersonEntity {
     private String firstName;
     @Column(name = "PATRONYMIC")
     private String patronymic;
-    @Column(name = "BIRTHDATE")
+    @Column(name = "BIRTH_DATE")
     private Date birthDate;
     @Column(name = "BIRTH_PLACE")
     private String placeOfBirth;
@@ -52,10 +54,10 @@ public class RelatedPersonEntity {
     private String inn;
     @Column(name = "PINFL")
     private String pinFl;
-    @OneToMany(targetEntity = DocumentEntity.class, cascade = { CascadeType.ALL }, orphanRemoval = true)
+    @OneToMany(targetEntity = DocumentEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "REL_PERSON_ID")
     private List<DocumentEntity> documents;
-    @OneToMany(targetEntity = AddressEntity.class, cascade = { CascadeType.ALL }, orphanRemoval = true)
+    @OneToMany(targetEntity = AddressEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "REL_PERSON_ID")
     private List<AddressEntity> addresses;
     @Column(name = "REG_ADDR_EQ_RES_ADDR")
@@ -63,21 +65,21 @@ public class RelatedPersonEntity {
     @Column(name = "IS_COBORROWED")
     private Boolean isCoBorrowed;
     @OneToOne(fetch = FetchType.LAZY, targetEntity = PhoneEntity.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "PHONEID", unique = true)
+    @JoinColumn(name = "PHONE_ID", unique = true)
     private PhoneEntity phone;
     @OneToOne(fetch = FetchType.LAZY, targetEntity = JobInfoEntity.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "JOBINFOID", unique = true)
+    @JoinColumn(name = "JOB_INFO_ID", unique = true)
     private JobInfoEntity jobInfo;
     @Column(name = "IS_ADDITIONAL_INCOME")
     private Boolean isAdditionalIncome;
-    @OneToMany(targetEntity = AdditionalIncomeEntity.class, cascade = { CascadeType.ALL }, orphanRemoval = true)
+    @OneToMany(targetEntity = AdditionalIncomeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "REL_PERSON_ID")
     private List<AdditionalIncomeEntity> additionalIncome;
     @Column(name = "IS_CAR")
     private Boolean isCar;
     @Column(name = "IS_REAL_ESTATE")
     private Boolean isRealEstate;
-    @OneToMany(targetEntity = DepositInfoEntity.class, cascade = { CascadeType.ALL }, orphanRemoval = true)
+    @OneToMany(targetEntity = DepositInfoEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "REL_PERSON_ID")
     private List<DepositInfoEntity> depositInfo;
     @Column(name = "MARITAL_STATUS")
@@ -94,28 +96,22 @@ public class RelatedPersonEntity {
     private String TypeOfHousing;
     @Column(name = "IS_RETIREE")
     private Boolean isRetiree;
-    @Column(name = "NINPS_ACCOUNT")
-    private String ninpsAccount;
-    @OneToMany(targetEntity = CurrentLoanEntity.class, cascade = { CascadeType.ALL }, orphanRemoval = true)
+    @Column(name = "NINPS_ACCOUNT_BANK")
+    private String ninpsAccountBank;
+    @OneToMany(targetEntity = CurrentLoanEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "REL_PERSON_ID")
     private List<CurrentLoanEntity> currentLoans;
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         RelatedPersonEntity that = (RelatedPersonEntity) o;
-
-        return id != null ? id.equals(that) : that.id == null;
+        return id.equals(that.id);
     }
 
     @Override
     public int hashCode() {
-        return id != null ? id.hashCode() : 0;
+        return Objects.hash(id);
     }
 }

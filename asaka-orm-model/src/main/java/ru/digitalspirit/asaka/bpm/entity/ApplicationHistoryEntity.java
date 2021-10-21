@@ -1,18 +1,20 @@
 package ru.digitalspirit.asaka.bpm.entity;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.sql.Timestamp;
+import java.util.Objects;
 
 @Getter
 @Setter
+@Builder
 @Entity
 @Table(name = "APPLICATION_HISTORY")
 public class ApplicationHistoryEntity {
-
     @Id
     @GeneratedValue(generator = "SEQ_APPLICATION_HISTORY")
     @SequenceGenerator(name = "SEQ_APPLICATION_HISTORY", sequenceName = "SEQ_APPLICATION_HISTORY", allocationSize = 1)
@@ -37,24 +39,16 @@ public class ApplicationHistoryEntity {
     @Column(name = "COMMENT_TEXT")
     private String comment;
 
-
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         ApplicationHistoryEntity that = (ApplicationHistoryEntity) o;
-
-        return id != null ? id.equals(that.id) : that.id == null;
+        return id.equals(that.id);
     }
 
     @Override
     public int hashCode() {
-        return id != null ? id.hashCode() : 0;
+        return Objects.hash(id);
     }
-
 }

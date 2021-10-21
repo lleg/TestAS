@@ -16,47 +16,47 @@ import java.util.Objects;
 public class AddressEntity {
 
     @Id
-    @GeneratedValue(generator="SEQ_ADDRESS")
-    @SequenceGenerator(name="SEQ_ADDRESS",sequenceName="SEQ_ADDRESS", allocationSize=1)
+    @GeneratedValue(generator = "SEQ_ADDRESS")
+    @SequenceGenerator(name = "SEQ_ADDRESS", sequenceName = "SEQ_ADDRESS", allocationSize = 1)
     @Column(name = "ID")
     private BigInteger id;
-    @Column(name = "ADDRESSTYPE")
+    @Column(name = "ADDRESS_TYPE")
     private String addressType;
     @Column(name = "FORMAT")
     private String format;
-    @Column(name = "ACTIVEFLAG")
+    @Column(name = "ACTIVE_FLAG")
     private String activeFlag;
-    @Column(name = "REGIONCODE")
+    @Column(name = "REGION_CODE")
     private String regionCode;
     @Column(name = "REGION")
     private String region;
-    @Column(name = "REGIONTYPE")
+    @Column(name = "REGION_TYPE")
     private String regionType;
-    @Column(name = "DISTRICTTYPE")
+    @Column(name = "DISTRICT_TYPE")
     private String districtType;
-    @Column(name = "DISTRICTCODE")
+    @Column(name = "DISTRICT_CODE")
     private String districtCode;
-    @Column(name = "CITYTYPE")
+    @Column(name = "CITY_TYPE")
     private String cityType;
-    @Column(name = "CITYCODE")
+    @Column(name = "CITY_CODE")
     private String cityCode;
-    @Column(name = "SETTLEMENTTYPE")
+    @Column(name = "SETTLEMENT_TYPE")
     private String settlementType;
-    @Column(name = "SETTLEMENTCODE")
+    @Column(name = "SETTLEMENT_CODE")
     private String settlementCode;
-    @Column(name = "STREETTYPE")
+    @Column(name = "STREET_TYPE")
     private String streetType;
-    @Column(name = "STREETCODE")
+    @Column(name = "STREET_CODE")
     private String streetCode;
-    @Column(name = "HOUSETYPE")
+    @Column(name = "HOUSE_TYPE")
     private String houseType;
-    @Column(name = "HOUSECODE")
+    @Column(name = "HOUSE_CODE")
     private String houseCode;
-    @Column(name = "FLATCODE")
+    @Column(name = "FLAT_CODE")
     private String flatCode;
     @Column(name = "COUNTRY")
     private String country;
-    @Column(name = "POSTALCODE")
+    @Column(name = "POSTAL_CODE")
     private String postalCode;
     @Column(name = "STATE")
     private String state;
@@ -74,27 +74,19 @@ public class AddressEntity {
     private String building;
     @Column(name = "APARTMENT")
     private String apartment;
-    @Column(name = "ADDRESSLINE", length = 2000)
+    @Column(name = "ADDRESS_LINE", length = 2000)
     private String addressLine;
-
-
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         AddressEntity that = (AddressEntity) o;
-
-        return Objects.equals(id, that.id);
+        return id.equals(that.id);
     }
 
     @Override
     public int hashCode() {
-        return id != null ? id.hashCode() : 0;
+        return Objects.hash(id);
     }
 }

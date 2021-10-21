@@ -9,7 +9,6 @@ import ru.digitalspirit.asaka.bpm.orm.configuration.Model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -27,9 +26,9 @@ public class EntityServiceTest {
         Timestamp date1 = new Timestamp(System.currentTimeMillis());
         Date date = new Date(System.currentTimeMillis());
 
-        AdditionalIncomeEntity additionalIncomeEntity = new AdditionalIncomeEntity();
-        additionalIncomeEntity.setIncomeType("type1");
-        additionalIncomeEntity.setSum(BigDecimal.valueOf(124313.6));
+        AdditionalIncomeEntity additionalIncomeEntity = AdditionalIncomeEntity.builder()
+                .incomeType("type1")
+                .sum(BigDecimal.valueOf(124313.6)).build();
 
         AddressEntity addressEntity1 = AddressEntity.builder().addressType("Dhtasf")
                 .city("Piter")
@@ -46,37 +45,37 @@ public class EntityServiceTest {
                 .apartment("4").build();
 
 
-        CurrentLoanEntity currentLoanEntity1 = new CurrentLoanEntity();
-        currentLoanEntity1.setSum(BigDecimal.valueOf(324.4));
-        currentLoanEntity1.setCreditBank("Alfa");
+        CurrentLoanEntity currentLoanEntity1 = CurrentLoanEntity.builder()
+                .sum(BigDecimal.valueOf(324.4))
+                .creditBank("Alfa")
+                .monthlyPayment(BigDecimal.valueOf(20.4)).build();
 
-        DepositInfoEntity depositInfoEntity = new DepositInfoEntity();
-        depositInfoEntity.setSum(BigDecimal.valueOf(1324.6));
-        depositInfoEntity.setBank("Alfa");
+        DepositInfoEntity depositInfoEntity = DepositInfoEntity.builder()
+                .sum(BigDecimal.valueOf(1324.6))
+                .bank("Alfa").build();
 
-        JobInfoEntity jobInfoEntity = new JobInfoEntity();
-        jobInfoEntity.setInn("124353452356");
-        jobInfoEntity.setBankSalary("Alfa");
-        jobInfoEntity.setEmployerName("SPIRIT");
-        jobInfoEntity.setStartJobDate(date);
-        jobInfoEntity.setTotalJobExperienceMonths(12);
+        JobInfoEntity jobInfoEntity = JobInfoEntity.builder().inn("124353452356")
+                .bankSalary("Alfa")
+                .employerName("SPIRIT")
+                .startJobDate(date)
+                .totalJobExperienceMonths(12).build();
 
-        DocumentEntity documentEntity = new DocumentEntity();
-        documentEntity.setDocumentName("Passport");
-        documentEntity.setDivisionCode("234-234");
-        documentEntity.setIdentificationFlag(true);
-        documentEntity.setSeries("1234");
-        documentEntity.setNumber("1234125");
+        DocumentEntity documentEntity = DocumentEntity.builder()
+                .documentName("Passport")
+                .divisionCode("234-234")
+                .identificationFlag(true)
+                .series("1234")
+                .number("1234125").build();
 
-        PhoneEntity phoneEntity =new PhoneEntity();
-        phoneEntity.setNumber("12352345235");
-        phoneEntity.setPrimaryPhone(true);
+        PhoneEntity phoneEntity = PhoneEntity.builder()
+                .number("12352345235")
+                .primaryPhone(true).build();
 
         //---- REL PERSON
 
-        AdditionalIncomeEntity additionalIncomeEntityRel = new AdditionalIncomeEntity();
-        additionalIncomeEntityRel.setIncomeType("type23");
-        additionalIncomeEntityRel.setSum(BigDecimal.valueOf(124313.6));
+        AdditionalIncomeEntity additionalIncomeEntityRel = AdditionalIncomeEntity.builder()
+                .incomeType("type23")
+                .sum(BigDecimal.valueOf(124313.6)).build();
 
         AddressEntity addressEntity1Rel = AddressEntity.builder().addressType("Прописка")
                 .city("Voroneg")
@@ -85,104 +84,110 @@ public class EntityServiceTest {
                 .postalCode("3456")
                 .apartment("7").build();
 
-        CurrentLoanEntity currentLoanEntity1Rel = new CurrentLoanEntity();
-        currentLoanEntity1Rel.setSum(BigDecimal.valueOf(324.4));
-        currentLoanEntity1Rel.setCreditBank("VTB");
+        CurrentLoanEntity currentLoanEntity1Rel = CurrentLoanEntity.builder()
+                .sum(BigDecimal.valueOf(324.4))
+                .creditBank("VTB").build();
 
-        JobInfoEntity jobInfoEntityRel = new JobInfoEntity();
-        jobInfoEntityRel.setInn("124353452356");
-        jobInfoEntityRel.setBankSalary("AlfaBank");
-        jobInfoEntityRel.setEmployerName("WORK");
-        jobInfoEntityRel.setStartJobDate(date);
-        jobInfoEntityRel.setTotalJobExperienceMonths(12);
+        JobInfoEntity jobInfoEntityRel = JobInfoEntity.builder()
+                .inn("124353452356")
+                .bankSalary("AlfaBank")
+                .employerName("WORK")
+                .startJobDate(date)
+                .totalJobExperienceMonths(12).build();
 
-        PhoneEntity phoneEntityRel =new PhoneEntity();
-        phoneEntityRel.setNumber("12352345235");
-        phoneEntityRel.setPrimaryPhone(true);
+        PhoneEntity phoneEntityRel = PhoneEntity.builder()
+                .number("12352345235")
+                .primaryPhone(true).build();
 
-        RelatedPersonEntity relatedPersonEntity = new RelatedPersonEntity();
         List<AdditionalIncomeEntity> additionalIncomeEntityListRel = new ArrayList();
         additionalIncomeEntityListRel.add(additionalIncomeEntityRel);
         List<AddressEntity> addressEntityListRel = new ArrayList();
         addressEntityListRel.add(addressEntity1Rel);
-
-        relatedPersonEntity.setAdditionalIncome(additionalIncomeEntityListRel);
-        relatedPersonEntity.setAddresses(addressEntityListRel);
         List<CurrentLoanEntity> currentLoanEntityListRel = new ArrayList();
         currentLoanEntityListRel.add(currentLoanEntity1Rel);
-        relatedPersonEntity.setCurrentLoans(currentLoanEntityListRel);
-        relatedPersonEntity.setJobInfo(jobInfoEntityRel);
-        relatedPersonEntity.setPhone(phoneEntityRel);
-        relatedPersonEntity.setClientCode("2351223");
-        relatedPersonEntity.setClientUID("q24523624564647");
+
+        RelatedPersonEntity relatedPersonEntity = RelatedPersonEntity.builder()
+                .additionalIncome(additionalIncomeEntityListRel)
+                .addresses(addressEntityListRel)
+                .currentLoans(currentLoanEntityListRel)
+                .jobInfo(jobInfoEntityRel)
+                .phone(phoneEntityRel)
+                .clientCode("2351223")
+                .clientUID("q24523624564647").build();
 
 
         //------------------------------------
-
-
-        ClientEntity clientEntity = new ClientEntity();
-        clientEntity.setClientID("1111111");
-        clientEntity.setClientCode("7777");
-        clientEntity.setClientUID("111111UID");
-        clientEntity.setClientCodeCrm("7777CRM");
-        clientEntity.setFullName("Petrov Petr Petrovich");
         List<AdditionalIncomeEntity> additionalIncomeEntityList = new ArrayList();
         additionalIncomeEntityList.add(additionalIncomeEntity);
-        clientEntity.setAdditionalIncome(additionalIncomeEntityList);
+
         List<AddressEntity> addressEntityList = new ArrayList();
         addressEntityList.add(addressEntity1);
         addressEntityList.add(addressEntity2);
-        clientEntity.setAddresses(addressEntityList);
-        clientEntity.setBirthDate(date);
-        clientEntity.setAdultChildrenNum(2);
+
         List<CurrentLoanEntity> currentLoanEntityList = new ArrayList();
         currentLoanEntityList.add(currentLoanEntity1);
-        clientEntity.setCurrentLoans(currentLoanEntityList);
+
         List<DepositInfoEntity> depositInfoEntityList = new ArrayList();
         depositInfoEntityList.add(depositInfoEntity);
-        clientEntity.setDepositInfo(depositInfoEntityList);
-        clientEntity.setInn("132412355143");
-        clientEntity.setRegAddrEqualseResAddr(true);
-        clientEntity.setIsCar(true);
-        clientEntity.setJobInfo(jobInfoEntity);
+
         List<DocumentEntity> documentEntityList = new ArrayList();
         documentEntityList.add(documentEntity);
-        clientEntity.setDocuments(documentEntityList);
-        clientEntity.setPhone(phoneEntity);
-        clientEntity.setIsRealEstate(true);
+
         List<RelatedPersonEntity> relatedPersonEntityList = new ArrayList();
         relatedPersonEntityList.add(relatedPersonEntity);
-        clientEntity.setRelatedPersons(relatedPersonEntityList);
 
-        AdditionalContactEntity additionalContactEntity = new AdditionalContactEntity();
-        additionalContactEntity.setPhone("23452346256");
-        additionalContactEntity.setFio("Ivanov Ivan Petrovich");
-        additionalContactEntity.setRelationType("1");
+        ClientEntity clientEntity = ClientEntity.builder()
+                .clientID("1111111")
+                .clientCode("7777")
+                .clientUID("111111UID")
+                .clientCodeCrm("7777CRM")
+                .fullName("Petrov Petr Petrovich")
+                .additionalIncome(additionalIncomeEntityList)
+                .addresses(addressEntityList)
+                .birthDate(date)
+                .adultChildrenNum(2)
+                .currentLoans(currentLoanEntityList)
+                .depositInfo(depositInfoEntityList)
+                .inn("132412355143")
+                .regAddrEqualseResAddr(true)
+                .isCar(true)
+                .jobInfo(jobInfoEntity)
+                .documents(documentEntityList)
+                .phone(phoneEntity)
+                .isRealEstate(true)
+                .relatedPersons(relatedPersonEntityList).build();
 
-        AttachedDocumentEntity attachedDocumentEntity = new AttachedDocumentEntity();
-        attachedDocumentEntity.setDocumentName("Анкета");
-        attachedDocumentEntity.setDocumentDate(date);
-        attachedDocumentEntity.setGuid(UUID.randomUUID().toString());
+        AdditionalContactEntity additionalContactEntity = AdditionalContactEntity.builder()
+                .phone("23452346256")
+                .fio("Ivanov Ivan Petrovich")
+                .relationType("1").build();
 
-        LoanEntity loanEntity = new LoanEntity();
-        loanEntity.setCurrency("RUB");
-        loanEntity.setSum(BigDecimal.valueOf(123442.6));
-        loanEntity.setCreditType("asfwqfwe");
+        AttachedDocumentEntity attachedDocumentEntity = AttachedDocumentEntity.builder()
+                .documentName("Анкета")
+                .documentDate(date)
+                .guid(UUID.randomUUID().toString()).build();
 
-        app = new ApplicationEntity();
-        app.setClient(clientEntity);
-        app.setBranch("BRANCH");
-        app.setClaimDate(date1);
-        app.setClaimNumBpm("qqq111111");
-        app.setBranch("1234215");
+        LoanEntity loanEntity = LoanEntity.builder()
+                .currency("RUB")
+                .sum(BigDecimal.valueOf(123442.6))
+                .issuanceType("asfwqfwe").build();
+
         List<AdditionalContactEntity> additionalContactEntityList = new ArrayList();
         additionalContactEntityList.add(additionalContactEntity);
-        app.setAdditionalContacts(additionalContactEntityList);
-        app.setStatus("23");
+
         List<AttachedDocumentEntity> attachedDocumentEntityList = new ArrayList();
         attachedDocumentEntityList.add(attachedDocumentEntity);
-        app.setAttachedDocuments(attachedDocumentEntityList);
-        app.setLoan(loanEntity);
+
+        app = ApplicationEntity.builder()
+                .client(clientEntity)
+                .branch("BRANCH")
+                .claimDate(date1)
+                .claimNumBpm("qqq111111")
+                .branch("1234215")
+                .additionalContacts(additionalContactEntityList)
+                .status("23")
+                .attachedDocuments(attachedDocumentEntityList)
+                .loan(loanEntity).build();
 
     }
 

@@ -7,10 +7,11 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Objects;
 
 @Getter
 @Setter
-//@Builder
+@Builder
 @Entity
 @Table(name = "ADDITIONAL_INCOME")
 public class AdditionalIncomeEntity {
@@ -20,28 +21,21 @@ public class AdditionalIncomeEntity {
     @SequenceGenerator(name = "SEQ_ADDINCOME", sequenceName = "SEQ_ADDINCOME", allocationSize = 1)
     @Column(name = "ID")
     private BigInteger id;
-    @Column(name = "SUM")
+    @Column(name = "SUM", precision = 19)
     private BigDecimal sum;
     @Column(name = "INCOME_TYPE")
     private String incomeType;
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         AdditionalIncomeEntity that = (AdditionalIncomeEntity) o;
-
-        return id != null ? id.equals(that) : that.id == null;
+        return id.equals(that.id);
     }
 
     @Override
     public int hashCode() {
-        return id != null ? id.hashCode() : 0;
+        return Objects.hash(id);
     }
-
 }
