@@ -62,8 +62,8 @@ public class LoanEntity {
     private BigDecimal minInitialPayment;
     @Column(name = "MAX_INITIAL_PAYMENT", precision = 19)
     private BigDecimal maxInitialPayment;
-    @Column(name = "ISSUANCE_TYPE")
-    private String issuanceType;
+    @Column(name = "ISSUANCE_FORM")
+    private String issuanceForm;
 
     @Override
     public boolean equals(Object o) {

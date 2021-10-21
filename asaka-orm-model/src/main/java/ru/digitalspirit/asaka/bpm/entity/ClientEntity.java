@@ -62,9 +62,9 @@ public class ClientEntity {
     private Boolean regAddrEqualseResAddr;
     @Column(name = "IS_CO_BORROWED")
     private Boolean isCoBorrowed;
-    @OneToOne(fetch = FetchType.LAZY, targetEntity = PhoneEntity.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "PHONE_ID", unique = true)
-    private PhoneEntity phone;
+    @OneToMany(targetEntity = PhoneEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
+    @JoinColumn(name = "CLIENT_ID")
+    private List<PhoneEntity> phone;
     @OneToOne(fetch = FetchType.LAZY, targetEntity = JobInfoEntity.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "JOB_INFO_ID", unique = true)
     private JobInfoEntity jobInfo;

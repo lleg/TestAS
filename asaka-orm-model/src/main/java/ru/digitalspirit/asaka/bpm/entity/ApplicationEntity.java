@@ -3,6 +3,7 @@ package ru.digitalspirit.asaka.bpm.entity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.math.BigInteger;
@@ -16,12 +17,11 @@ import java.util.Objects;
 @Entity
 @Table(name = "APPLICATION")
 public class ApplicationEntity {
-
     @Id
-    @GeneratedValue(generator = "SEQ_APPLICATION")
-    @SequenceGenerator(name = "SEQ_APPLICATION", sequenceName = "SEQ_APPLICATION", allocationSize = 1)
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     @Column(name = "APPLICATION_ID")
-    private BigInteger applicationID;
+    private String applicationID;
     @Column(name = "CLAIM_NUM_BPM")
     private String claimNumBpm;
     @Column(name = "CLAIM_NUM_CRM")
@@ -32,6 +32,12 @@ public class ApplicationEntity {
     private String status;
     @Column(name = "DESICION")
     private String desicion;
+    @OneToOne(fetch = FetchType.LAZY, targetEntity = CommentEntity.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "VERIFICATION_COMMENT_ID", unique = true)
+    private CommentEntity verificationComment;
+    @OneToOne(fetch = FetchType.LAZY, targetEntity = CommentEntity.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "CREDIT_ADMINISTRATOR_COMMENT_ID", unique = true)
+    private CommentEntity creditAdministratorComment;
     @Column(name = "CLIME_DATE")
     private Timestamp claimDate;
     @OneToOne(fetch = FetchType.LAZY, targetEntity = ClientEntity.class, cascade = CascadeType.ALL)

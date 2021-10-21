@@ -30,6 +30,7 @@
 		<mapping class="ru.digitalspirit.asaka.bpm.entity.PhoneEntity"/>
 		<mapping class="ru.digitalspirit.asaka.bpm.entity.RelatedPersonEntity"/>
 		<mapping class="ru.digitalspirit.asaka.bpm.entity.InsuranceEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.CommentEntity"/>
 
     </session-factory>
 </hibernate-configuration>

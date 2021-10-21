@@ -14,7 +14,6 @@ import java.util.Objects;
 @Entity
 @Table(name = "PHONE_INFO")
 public class PhoneEntity {
-
     @Id
     @GeneratedValue(generator = "SEQ_PHONE")
     @SequenceGenerator(name = "SEQ_PHONE", sequenceName = "SEQ_PHONE", allocationSize = 1)

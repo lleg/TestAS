@@ -71,6 +71,9 @@ public class EntityServiceTest {
                 .number("12352345235")
                 .primaryPhone(true).build();
 
+        List<PhoneEntity> phoneList = new ArrayList();
+        phoneList.add(phoneEntity);
+
         //---- REL PERSON
 
         AdditionalIncomeEntity additionalIncomeEntityRel = AdditionalIncomeEntity.builder()
@@ -99,6 +102,8 @@ public class EntityServiceTest {
                 .number("12352345235")
                 .primaryPhone(true).build();
 
+        List<PhoneEntity> phoneEntityList = new ArrayList();
+        phoneEntityList.add(phoneEntityRel);
         List<AdditionalIncomeEntity> additionalIncomeEntityListRel = new ArrayList();
         additionalIncomeEntityListRel.add(additionalIncomeEntityRel);
         List<AddressEntity> addressEntityListRel = new ArrayList();
@@ -111,7 +116,7 @@ public class EntityServiceTest {
                 .addresses(addressEntityListRel)
                 .currentLoans(currentLoanEntityListRel)
                 .jobInfo(jobInfoEntityRel)
-                .phone(phoneEntityRel)
+                .phone(phoneEntityList)
                 .clientCode("2351223")
                 .clientUID("q24523624564647").build();
 
@@ -153,7 +158,7 @@ public class EntityServiceTest {
                 .isCar(true)
                 .jobInfo(jobInfoEntity)
                 .documents(documentEntityList)
-                .phone(phoneEntity)
+                .phone(phoneList)
                 .isRealEstate(true)
                 .relatedPersons(relatedPersonEntityList).build();
 
@@ -170,7 +175,7 @@ public class EntityServiceTest {
         LoanEntity loanEntity = LoanEntity.builder()
                 .currency("RUB")
                 .sum(BigDecimal.valueOf(123442.6))
-                .issuanceType("asfwqfwe").build();
+                .issuanceForm("asfwqfwe").build();
 
         List<AdditionalContactEntity> additionalContactEntityList = new ArrayList();
         additionalContactEntityList.add(additionalContactEntity);
