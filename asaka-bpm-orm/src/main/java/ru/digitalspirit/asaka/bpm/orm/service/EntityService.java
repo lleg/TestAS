@@ -16,7 +16,7 @@ public class EntityService {
 
 	public enum State { SERVER, LOCAL }
 
-	private State state = State.LOCAL;
+	private State state = State.SERVER;
 
 	public void setState(State state) {
 		this.state = state;

@@ -6,4 +6,5 @@ include 'bpm-common'
 include 'asaka-microloan-model'
 include 'asaka-refbook'
 include 'asaka-bpm-sql'
+include 'asaka-bpm-services'
 

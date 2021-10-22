@@ -1,0 +1,5 @@
+# Declare files that will always have LF or CRLF line endings on checkout
+delivery/flyway/flyway* text eol=lf
+delivery/flyway/flyway*.cmd text eol=crlf
+delivery/**/deploy text eol=lf
+delivery/jasper/deployReports text eol=lf

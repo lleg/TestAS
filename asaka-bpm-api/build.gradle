@@ -10,18 +10,8 @@ version '1.0-SNAPSHOT'
 
 sourceCompatibility = '1.8'
 
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-    developmentOnly
-    runtimeClasspath {
-        extendsFrom developmentOnly
-    }
-}
-
-
 dependencies {
+    compile(project(":asaka-bpm-services"))
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     compileOnly files("../libs/com.ibm.ws.ejb.thinclient_9.0.jar")

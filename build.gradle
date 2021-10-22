@@ -30,6 +30,16 @@ subprojects {
     apply plugin: 'java'
     apply plugin: "io.franzbecker.gradle-lombok"
 
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+        developmentOnly
+        runtimeClasspath {
+            extendsFrom developmentOnly
+        }
+    }
+
     tasks.withType(Javadoc) {
         options.encoding = 'UTF-8'
     }

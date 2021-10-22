@@ -7,7 +7,7 @@
 	<session-factory>
    	<!-- properties -->
 		<property name="dialect">ru.digitalspirit.asaka.bpm.orm.configuration.Oracle10gDialectExtended</property>
-		<property name="connection.datasource">jdbc/rosnfo_guarantee</property>
+		<property name="connection.datasource">jdbc/asaka_microloan</property>
 		<property name="hibernate.event.merge.entity_copy_observer">allow</property>
 		<property name="hibernate.jdbc.use_streams_for_binary">false</property>
 		<property name="show_sql">false</property>

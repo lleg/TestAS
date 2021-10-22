@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.client.RestTemplate;
 import ru.digitalspirit.asaka.applicationlist.entity.BusinessProcessRole;
 import ru.digitalspirit.asaka.bpm.service.*;
-import ru.digitalspirit.asaka.refbook.configuration.DbConfiguration;
+//import ru.digitalspirit.asaka.refbook.configuration.DbConfiguration;
 import ru.digitalspirit.asaka.bpm.service.*;
 import ru.digitalspirit.asaka.util.CoreUtil;
 
@@ -18,7 +18,7 @@ import java.security.NoSuchAlgorithmException;
 
 
 @Configuration
-@Import(DbConfiguration.class)
+//@Import(DbConfiguration.class)
 @ComponentScan({"ru.digitalspirit.asaka.bpm.service"})
 public class BpmConfiguration {
 
