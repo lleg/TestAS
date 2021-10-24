@@ -14,7 +14,7 @@ public class ModelConfiguration {
 
     static {
         Map<Model, String> modelPackage = new EnumMap<>(Model.class);
-        modelPackage.put(Model.ASAKA_MICROZIME,"ru.digitalspirit.asaka.bpm.entity");
+        modelPackage.put(Model.ASAKA_MICROLOAN,"ru.digitalspirit.asaka.bpm.entity");
         MODEL_PACKAGE = Collections.unmodifiableMap(modelPackage);
     }
 }

@@ -1,8 +1,6 @@
 package ru.digitalspirit.asaka.bpm.entity;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigInteger;
@@ -12,8 +10,10 @@ import java.util.Objects;
 @Setter
 @Getter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "COMMENT")
+@Table(name = "APP_COMMENTS")
 public class CommentEntity {
     @Id
     @GeneratedValue(generator = "SEQ_COMMENT")
@@ -22,7 +22,7 @@ public class CommentEntity {
     private BigInteger id;
     @Column(name = "CRITICAL_FLAG")
     private Boolean criticalFlag;
-    @Column(name = "COMMENT")
+    @Column(name = "APP_COMMENT")
     private String comment;
     @Column(name = "COMMENT_PERSON")
     private String commentPerson;

@@ -1,9 +1,7 @@
 package ru.digitalspirit.asaka.bpm.entity;
 
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -13,6 +11,8 @@ import java.util.Objects;
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "CURRENT_LOAN")
 public class CurrentLoanEntity {

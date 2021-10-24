@@ -17,11 +17,11 @@ public class HibernateConfiguration {
 
 	static {
 		CONFIGURATION_FILE = new EnumMap<>(Model.class);
-		CONFIGURATION_FILE.put(Model.ASAKA_MICROZIME, "ormmapping/microzime/BpmOrmModel.cfg.xml");
+		CONFIGURATION_FILE.put(Model.ASAKA_MICROLOAN, "ormmapping/microzime/BpmOrmModel.cfg.xml");
 
 
 		LOCAL_CONFIGURATION_FILE = new EnumMap<>(Model.class);
-		LOCAL_CONFIGURATION_FILE.put(Model.ASAKA_MICROZIME, "ormmapping/microzime/BpmOrmModelLocal.cfg.xml");
+		LOCAL_CONFIGURATION_FILE.put(Model.ASAKA_MICROLOAN, "ormmapping/microzime/BpmOrmModelLocal.cfg.xml");
 	}
 	
 	@SuppressWarnings("deprecation")

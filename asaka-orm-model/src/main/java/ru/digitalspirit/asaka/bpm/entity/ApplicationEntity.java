@@ -1,8 +1,6 @@
 package ru.digitalspirit.asaka.bpm.entity;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -14,24 +12,26 @@ import java.util.Objects;
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "APPLICATION")
 public class ApplicationEntity {
     @Id
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+    @GeneratedValue(generator="SEQ_APPLICATION")
+    @SequenceGenerator(name="SEQ_APPLICATION",sequenceName="SEQ_APPLICATION", allocationSize=1)
     @Column(name = "APPLICATION_ID")
-    private String applicationID;
+    private BigInteger applicationID;
     @Column(name = "CLAIM_NUM_BPM")
     private String claimNumBpm;
     @Column(name = "CLAIM_NUM_CRM")
-    private String ClaimNumCrm;
+    private String claimNumCrm;
     @Column(name = "BRANCH")
     private String branch;
     @Column(name = "STATUS")
     private String status;
     @Column(name = "DESICION")
-    private String desicion;
+    private String decision;
     @OneToOne(fetch = FetchType.LAZY, targetEntity = CommentEntity.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "VERIFICATION_COMMENT_ID", unique = true)
     private CommentEntity verificationComment;

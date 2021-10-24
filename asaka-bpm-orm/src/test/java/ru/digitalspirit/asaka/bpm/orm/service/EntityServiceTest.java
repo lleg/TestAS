@@ -200,7 +200,7 @@ public class EntityServiceTest {
     public void save() {
         Transaction transaction = null;
         EntityService es = new EntityService();
-        Session session = es.getSession(Model.ASAKA_MICROZIME);
+        Session session = es.getSession(Model.ASAKA_MICROLOAN);
         transaction = session.beginTransaction();
         Serializable id = es.save(app, session);
         transaction.commit();
@@ -212,7 +212,7 @@ public class EntityServiceTest {
     public void getById() {
         Transaction transaction = null;
         EntityService es = new EntityService();
-        Session session = es.getSession(Model.ASAKA_MICROZIME);
+        Session session = es.getSession(Model.ASAKA_MICROLOAN);
         transaction = session.beginTransaction();
         Serializable id = es.save(app, session);
         transaction.commit();

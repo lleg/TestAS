@@ -8,9 +8,9 @@
 		<!-- properties -->
 
 		<property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
-		<property name="connection.url">jdbc:oracle:thin:@85.192.32.133:1521/BPMDB</property>
-		<property name="connection.username">NFO_TEST</property>
-		<property name="connection.password">NFO_TEST</property>
+		<property name="connection.url">jdbc:oracle:thin:@//89.208.209.112:1521/BPMDB</property>
+		<property name="connection.username">BPM_MICROLOAN</property>
+		<property name="connection.password">BPM_MICROLOAN</property>
 		<property name="hibernate.id.new_generator_mappings">true</property>
 		<property name="hibernate.dialect">ru.digitalspirit.asaka.bpm.orm.configuration.Oracle10gDialectExtended</property>
 		<property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
