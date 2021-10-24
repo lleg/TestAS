@@ -194,6 +194,11 @@
 					<xs:documentation>Информация о действующих кредитах</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="IncomeAndTax" type="nfocomm:IncomeAndTaxType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Запись о доходах и налогах у определенного работодателя за определенный период</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="RelatedPerson" type="relprs:RelatedPerson" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Связ. лица</xs:documentation>
