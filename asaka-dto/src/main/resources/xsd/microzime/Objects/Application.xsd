@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<xs:schema xmlns:grn="http://Application.NFO.ru" xmlns:clnt="http://Client.NFO.ru" xmlns:ln="http://Loan.NFO.ru" xmlns:ins="http://Insurance.NFO.ru" xmlns:atd="http://AttachedDocument.NFO.ru" xmlns:apph="http://ApplicationHistory.NFO.ru" xmlns:nfocomm="http://NFOCommon.NFO.ru" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://Guaranty.NFO.ru" targetNamespace="http://Guaranty.NFO.ru" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://Client.NFO.ru" schemaLocation="Client.xsd"/>
+	<xs:import namespace="http://Loan.NFO.ru" schemaLocation="Loan.xsd"/>
+	<xs:import namespace="http://Insurance.NFO.ru" schemaLocation="Insurance.xsd"/>
+	<xs:import namespace="http://AttachedDocument.NFO.ru" schemaLocation="AttachedDocument.xsd"/>
+	<xs:import namespace="http://NFOCommon.NFO.ru" schemaLocation="../Common/NFOCommon.xsd"/>
+	<xs:import namespace="http://ApplicationHistory.NFO.ru" schemaLocation="ApplicationHistory.xsd"/>
+	<xs:complexType name="Application">
+		<xs:sequence>
+			<xs:element name="ApplicationID" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор Заявки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ClaimNumBpm" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Номер Заявки в BPM</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ClaimNumCrm" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Номер Заявки в CRM</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Branch" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код филиала операции/Точка продаж</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Status" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Статус Заявки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Decision" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Решение по Заявке</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VerificationComment" type="nfocomm:CommentType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Комментарий Верификатора</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CreditAdministratorComment" type="nfocomm:CommentType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Комментарий Кредитного администратора</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ClaimDate" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата Заявки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Client" type="clnt:ClientType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Данные по клиенту</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Loan" type="ln:LoanType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Данные по Продукту</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Insurance" type="ins:InsuranceType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Данные по Страховке</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AdditionalContact" type="nfocomm:AdditionalContactType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Список доп контактов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ManagerName" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ФИО Менеджера</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AttachedDocuments" type="atd:AttachedDocument" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Приложенные к заявке документы</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ApplicationHistory" type="apph:ApplicationHistory" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>История обработки Заявки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

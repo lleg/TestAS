@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<!--Created with Liquid Studio 2019 (https://www.liquid-technologies.com)-->
+<xs:schema xmlns:nfocomm="http://NFOCommon.NFO.ru" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://NFOCommon.NFO.ru" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="AccountType">
+		<xs:annotation>
+			<xs:documentation>Параметры платежного поручения</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор записи в NFO</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="isRosbank" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Счет Росбанка</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UseBrokerAccount" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Использовать брокерский счет</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Number" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Номер счета</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Currency" type="nfocomm:CurrencyType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Наименование валюты</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BeneficiaryBankBIC" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>БИК банк получателя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BeneficiaryBankSWIFT" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Банк получателя SWIFT BIC</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BeneficiaryBankName" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Наименование банка-получателя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BeneficiaryBankINN" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ИНН Банка-получателя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BeneficiaryBankKPP" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>КПП Банка-получателя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CorrespondentAccount" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Корреспондентский счет в ЦБ</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BeneficiaryBankCA" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Корреспондентский счет в Банке-корреспонденте</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CorrespondentBankBIC" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Банк-корреспондент Банка получателя SWIFT BIC</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AccountListType">
+		<xs:annotation>
+			<xs:documentation>Список платежных поручений</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Account" type="nfocomm:AccountType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Одна запись об атрибутах платежного поручения</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BeneficiaryName" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Получатель</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BeneficiaryINN" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ИНН получателя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BeneficiaryResidentCountryID" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Страна резидентности получателя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AppSystemIDType">
+		<xs:annotation>
+			<xs:documentation>Идентификтор банковской системы</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="InstanceID" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор экземпляра системы</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddressListType">
+		<xs:annotation>
+			<xs:documentation>Список адресов</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Address" type="nfocomm:AddressType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddressType">
+		<xs:annotation>
+			<xs:documentation>Адрес</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор адреса</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AddressType" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Тип адреса</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Format" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Формат хранения адреса</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ActiveFlag" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Флаг «Действующий»</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RegionCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код региона</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Region" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Регион</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RegionType" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Тип региона</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DistrictType" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Тип района</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DistrictCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код района</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CityType" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Тип города</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CityCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код города</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SettlementType" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Тип н.п.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SettlementCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код населенного пункта</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StreetType" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Тип улицы</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StreetCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код улицы</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="HouseType" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Тип дома</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="HouseCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код дома</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FlatCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код квартиры</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Country" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код страны</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PostalCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Почтовый индекс</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="State" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Область</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="District" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Район</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="City" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Город</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Settlement" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Населенный пункт</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Street" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Улица</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="House" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дом</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Building" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Корпус, строение, владение, литера</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Apartment" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Квартира/Офис</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AddressLine" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Адрес строкой</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EmailType">
+		<xs:annotation>
+			<xs:documentation>Email</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор Email</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Type" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Тип Email</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EmailAddress" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Адрес электронной почты</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EmailStatus" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Статус почтового ящика</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContactEmail" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Email указан в ДКБО как контактный</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EmailListType">
+		<xs:annotation>
+			<xs:documentation>Список email</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Email" type="nfocomm:EmailType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PhoneType">
+		<xs:annotation>
+			<xs:documentation>Телефон</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор телефона</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Type" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код типа телефона</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CountryPrefix" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код страны</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Number" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Номер телефона</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AddPhoneNumber" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Добавочный номер телефона</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PhoneStatus" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Статус телефона</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PrimaryPhone" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Признак главного телефона</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PhoneListType">
+		<xs:annotation>
+			<xs:documentation>Список телефонов</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Phone" type="nfocomm:PhoneType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CurrencyType">
+		<xs:annotation>
+			<xs:documentation>Валюта</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор записи в NFO</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NumCurrencyCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Цифровой код валюты по ISO-4217</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CharCurrencyCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Буквенный код валюты по ISO-4217</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CurrencyName" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Наименование валюты</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CustomerIDType">
+		<xs:annotation>
+			<xs:documentation>Идентификатор клиента</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор записи в NFO</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AppSystemID" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор банковской системы</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExternalCustomerID" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор клиента во внешней системе</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Department" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Отделение</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Main" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Признак основного идентификатора</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CreateDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата создания анкеты клиента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CommentType">
+		<xs:annotation>
+			<xs:documentation>Комментарий к заявке</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор комментария</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CriticalFlag" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Комментарий критичный (true)/некритичный (false)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Comment" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Комментарий</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CommentPerson" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Автор комментария</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CommentDate" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата и время комментария</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NotificationType">
+		<xs:annotation>
+			<xs:documentation>Уведомления на Email</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор уведомления</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Email" type="nfocomm:EmailType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Адрес электронной почты</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExtraEmail" type="nfocomm:EmailType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дополнительный адрес электронной почты</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Frequency" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Частота уведомления</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TrusteeStatusType">
+		<xs:annotation>
+			<xs:documentation>Отношение к клиенту</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="value" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Значение</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="JobInfoType">
+		<xs:annotation>
+			<xs:documentation>Сведения о работе</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Type" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Тип деятельности (Работа по найму, Предпринимательская деятельность и т.д.)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EmployerName" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Наименование работодателя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Phone" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Телефон организации</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="INN" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ИНН работодателя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EmployerActivityType" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Вид деятельности работодателя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Position" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Должность</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StartJobDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата начало работы</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LastJobExperienceMonths" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Стаж на последнем месте работы в месяцах</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TotalJobExperienceMonths" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Общий трудовой стаж в месяцах</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MonthlySalary" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Среднемесячная заработная плата(сум)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BankSalary" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>В каком Банке получаете ЗП</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AdditionalIncomeType">
+		<xs:annotation>
+			<xs:documentation>Дополнительный доход</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Sum" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Размер дополнительного дохода</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IncomeType" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Источник дополнительного дохода</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DepositInfoType">
+		<xs:annotation>
+			<xs:documentation>Информация о депозите</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Sum" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Сумма</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Bank" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Наименование банка</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CurrentLoanType">
+		<xs:annotation>
+			<xs:documentation>Информация о дополнительных кредитах</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Sum" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Размер кредита</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MonthlyPayment" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ежемесячный платеж</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CreditBank" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Наименование Банка-кредитора </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AdditionalContactType">
+		<xs:annotation>
+			<xs:documentation>Информация о дополнительных контактах</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FIO" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ФИО лица</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RelationType" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Отношение к заемщику</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BirthDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата рождения</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Phone" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Номер мобильного телефона</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IncomeAndTaxType">
+		<xs:annotation>
+			<xs:documentation>Запись о доходах и налогах у определенного работодателя за определенный период</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EmployerName" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Наименование работодателя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="INN" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ИНН работодателя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Year" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Год получения данных о заработной плате</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Month" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Месяц получения данных о заработной плате</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Salary" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Размер начисленной заработной платы (дохода в виде оплаты труда)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SalaryTaxSum" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Размер уплаченного налога на доходы физических лиц</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InpsSum" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Размер уплаченной суммы на индивидуальный накопительный пенсионный счет </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PropertyIncome" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Размер начисленных имущественных доходов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BenefitIncome" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Размер доходов, полученных в виде материальной выгоды</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OtherIncome" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Размер прочих доходов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:apph="http://ApplicationHistory.NFO.ru" targetNamespace="http://ApplicationHistory.NFO.ru" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="ApplicationHistory">
+		<xs:annotation>
+			<xs:documentation>История обработки Заявки</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор записи в NFO</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CurrentStatus" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Текущий статус Заявки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ChangeUser" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Пользователь последнего изменения</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DateTimeChange" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата и время последнего изменения</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TaskName" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Наименование задачи</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CreateUser" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Пользователь ввода записи</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DateTimeCreate" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата и время создания записи</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DeleteUser" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Пользователь удаления</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DateTimeDelete" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата и время удаления записи</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Comment" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Комментарий пользователя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

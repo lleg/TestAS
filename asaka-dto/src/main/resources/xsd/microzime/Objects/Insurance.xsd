@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ins="http://Insurance.NFO.ru" targetNamespace="http://Insurance.NFO.ru" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="InsuranceType">
+		<xs:annotation>
+			<xs:documentation>Сведения о страховке</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор записи в BPM</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InsuranceCompany" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Страховая компания</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PremiumFromCreditFunds" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Оплата страховой премии из кредитных средств</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PremiumFromOwnFunds" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Оплата страховой премии из собственных средств</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PremiumSum" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Сумма страховой премии</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Liability" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Страховая ответственность</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContractId" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор договора страхования в СК</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaymentDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата оплаты страховой премии</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PolicySeries" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Серия полиса</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PolicyNumber" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Номер полиса</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
