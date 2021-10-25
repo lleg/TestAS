@@ -1,19 +1,35 @@
-plugins {
-    id 'java'
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        mavenCentral()
+    }
+    dependencies {
+        classpath files(["../libs/ojdbc6.jar"])
+        classpath "gradle.plugin.com.boxfuse.client:gradle-plugin-publishing:6.0.6"
+    }
 }
+
+//plugins {
+//    id "org.flywaydb.flyway.enterprise" version "6.5.0"
+//}
 
 group 'ru.digitalspirit.asaka'
 version '1.0-SNAPSHOT'
+
+apply plugin: 'org.flywaydb.flyway'
+
+sourceCompatibility = 1.8
+
+if (hasProperty('env')) {
+    apply from: "${env}-flyway.gradle"
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-}
-
-test {
-    useJUnitPlatform()
+    compile files("../libs/ojdbc6.jar")
 }

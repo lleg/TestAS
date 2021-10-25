@@ -1,0 +1,8 @@
+project.ext['flyway.driver'] = 'oracle.jdbc.OracleDriver'
+project.ext['flyway.url'] = 'jdbc:oracle:thin:@//89.208.209.112:1521/BPMDB'
+project.ext['flyway.user'] = 'BPM_COMMON'
+project.ext['flyway.password'] = 'BPM_COMMON'
+project.ext['flyway.schemas'] = 'BPM_COMMON'
+project.ext['flyway.outOfOrder'] = true
+project.ext['flyway.baselineOnMigrate'] = true
+project.ext['flyway.locations'] = "filesystem:${project.projectDir}/src/main/resources/db/migration/common"
