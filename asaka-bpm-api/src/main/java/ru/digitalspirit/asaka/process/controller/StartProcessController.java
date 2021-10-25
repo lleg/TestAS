@@ -5,16 +5,15 @@ import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import ru.digitalspirit.asaka.services.startprocess.model.StartProcessRequestDTO;
-import ru.digitalspirit.asaka.services.startprocess.model.StartProcessResponseDTO;
-import ru.digitalspirit.asaka.services.startprocess.service.StartProcessService;
+import ru.digitalspirit.asaka.startprocess.model.StartProcessRequestDTO;
+import ru.digitalspirit.asaka.startprocess.model.StartProcessResponseDTO;
+import ru.digitalspirit.asaka.startprocess.service.StartProcessService;
 
 @Slf4j(topic = "StartProcessController")
 @RestController
@@ -35,9 +34,9 @@ public class StartProcessController {
             method = RequestMethod.POST)
     public ResponseEntity<StartProcessResponseDTO> startProcess(@ApiParam(value = "Входные параметры для процесса" ,required=true )
                                                             @RequestBody StartProcessRequestDTO body) {
-        log.debug("################################# StartProcessController: Request = " + body);
+        log.debug("################################# START PROCESS SERVICE: Request = " + body);
         StartProcessResponseDTO response = new StartProcessResponseDTO();
-        String appId = startProcessService.startProcess(body, "Microloan");
+        String appId = startProcessService.startProcess(body);
         response.setCode("0");
         return new ResponseEntity<StartProcessResponseDTO>(response, HttpStatus.OK);
     }

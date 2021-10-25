@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.client.RestTemplate;
-import ru.digitalspirit.asaka.applicationlist.entity.BusinessProcessRole;
+//import ru.digitalspirit.asaka.applicationlist.entity.BusinessProcessRole;
+import ru.digitalspirit.asaka.bpm.service.BpmService;
 import ru.digitalspirit.asaka.bpm.service.*;
 //import ru.digitalspirit.asaka.refbook.configuration.DbConfiguration;
-import ru.digitalspirit.asaka.bpm.service.*;
 import ru.digitalspirit.asaka.util.CoreUtil;
 
 import java.security.KeyManagementException;
@@ -24,30 +24,30 @@ public class BpmConfiguration {
 
     private static Logger logger = LoggerFactory.getLogger(BpmConfiguration.class);
 
-    @Autowired
-    JpaRepository<BusinessProcessRole, Long> businessProcessRoleRepository;
+//    @Autowired
+//    JpaRepository<BusinessProcessRole, Long> businessProcessRoleRepository;
 
     @Bean
-    public NbuBpmService nfoBpmService() {
-        return new NbuBpmServiceImpl();
+    public BpmService bpmService() {
+        return new BpmServiceImpl();
     }
 
-    @Bean
-    public UserInfoService nfoUserService(NbuBpmService nbuBpmService) {
-        NbuUserInfoServiceImpl userService = new NbuUserInfoServiceImpl(businessProcessRoleRepository);
-        userService.setBpmService(nbuBpmService);
-        return userService;
-    }
+//    @Bean
+//    public UserInfoService nfoUserService(NbuBpmService nbuBpmService) {
+//        NbuUserInfoServiceImpl userService = new NbuUserInfoServiceImpl(businessProcessRoleRepository);
+//        userService.setBpmService(nbuBpmService);
+//        return userService;
+//    }
+//
+//    @Bean
+//    public NbuBpmTaskListHelper nfoBpmTaskListHelper() {
+//        return new NbuBpmTaskListHelper(restTemplate());
+//    }
 
-    @Bean
-    public NbuBpmTaskListHelper nfoBpmTaskListHelper() {
-        return new NbuBpmTaskListHelper(restTemplate());
-    }
-
-    @Bean
-    public NbuBpmSendStatusHelper nfoBpmSendStatusHelper() {
-        return new NbuBpmSendStatusHelper(restTemplate());
-    }
+//    @Bean
+//    public NbuBpmSendStatusHelper nfoBpmSendStatusHelper() {
+//        return new NbuBpmSendStatusHelper(restTemplate());
+//    }
 
     @Bean
     public NbuJSessionIdHelper nfoJSessionIdHelper() {

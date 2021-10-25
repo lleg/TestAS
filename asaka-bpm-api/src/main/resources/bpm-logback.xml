@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <appender name="RosnfoRestFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>[%-23d{dd/MM/yyyy HH:mm:ss.SSS}] [%-20t] %-5level [%-50logger{50}] - %m%n</pattern>
+        </encoder>
+        <file>./log/rosnfo-guarantee.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>./log/guarantee-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!-- each file should be at most 10MB, keep 10 days worth of history, but at most 200MB -->
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>10</maxHistory>
+            <totalSizeCap>200MB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <appender name="RosnfoRestAPIFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>[%-23d{dd/MM/yyyy HH:mm:ss.SSS}] [%-20t] %-5level [%-50logger{50}] - %m%n</pattern>
+        </encoder>
+        <file>./log/rosnfo-guarantee-api.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>./log/guarantee-api%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!-- each file should be at most 10MB, keep 10 days worth of history, but at most 200MB -->
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>10</maxHistory>
+            <totalSizeCap>200MB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="RosnfoRestFileAppender"/>
+    </root>
+    <logger name="ru.digitalspirit" additivity="false" level="DEBUG">
+        <appender-ref ref="RosnfoRestFileAppender"/>
+    </logger>
+    <logger name="org.springframework.web.filter.CommonsRequestLoggingFilter" additivity="false">
+        <level value="DEBUG" />
+        <appender-ref ref="RosnfoRestAPIFileAppender"/>
+    </logger>
+</configuration>
