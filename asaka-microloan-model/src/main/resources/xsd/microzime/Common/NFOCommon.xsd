@@ -673,4 +673,66 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="IncomeAndTaxType">
+		<xs:annotation>
+			<xs:documentation>Запись о доходах и налогах у определенного работодателя за определенный период</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EmployerName" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Наименование работодателя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="INN" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ИНН работодателя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Year" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Год получения данных о заработной плате</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Month" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Месяц получения данных о заработной плате</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Salary" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Размер начисленной заработной платы (дохода в виде оплаты труда)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SalaryTaxSum" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Размер уплаченного налога на доходы физических лиц</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InpsSum" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Размер уплаченной суммы на индивидуальный накопительный пенсионный счет </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PropertyIncome" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Размер начисленных имущественных доходов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BenefitIncome" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Размер доходов, полученных в виде материальной выгоды</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OtherIncome" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Размер прочих доходов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 </xs:schema>

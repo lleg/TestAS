@@ -109,11 +109,6 @@
 					<xs:documentation>Адрес проживания совпадает с адресом регистрации?</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="IsCoBorrowed" type="xs:boolean" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Наличие созаемщика?</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="Phone" type="nfocomm:PhoneType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Телефон</xs:documentation>
@@ -192,6 +187,11 @@
 			<xs:element name="CurrentLoan" type="nfocomm:CurrentLoanType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Информация о действующих кредитах</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IncomeAndTax" type="nfocomm:IncomeAndTaxType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Запись о доходах и налогах у определенного работодателя за определенный период</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
