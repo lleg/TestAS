@@ -14,7 +14,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @Entity
 @Table(name = "APP_COMMENTS")
-public class CommentEntity {
+public class CommentTypeEntity {
     @Id
     @GeneratedValue(generator = "SEQ_COMMENT")
     @SequenceGenerator(name = "SEQ_COMMENT", sequenceName = "SEQ_COMMENT", allocationSize = 1)
@@ -33,7 +33,7 @@ public class CommentEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CommentEntity that = (CommentEntity) o;
+        CommentTypeEntity that = (CommentTypeEntity) o;
         return id.equals(that.id);
     }
 

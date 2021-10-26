@@ -1,7 +1,6 @@
 package ru.digitalspirit.asaka.bpm.entity;
 
 import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.math.BigInteger;
@@ -32,26 +31,26 @@ public class ApplicationEntity {
     private String status;
     @Column(name = "DESICION")
     private String decision;
-    @OneToOne(fetch = FetchType.LAZY, targetEntity = CommentEntity.class, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, targetEntity = CommentTypeEntity.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "VERIFICATION_COMMENT_ID", unique = true)
-    private CommentEntity verificationComment;
-    @OneToOne(fetch = FetchType.LAZY, targetEntity = CommentEntity.class, cascade = CascadeType.ALL)
+    private CommentTypeEntity verificationComment;
+    @OneToOne(fetch = FetchType.LAZY, targetEntity = CommentTypeEntity.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "CREDIT_ADMINISTRATOR_COMMENT_ID", unique = true)
-    private CommentEntity creditAdministratorComment;
+    private CommentTypeEntity creditAdministratorComment;
     @Column(name = "CLIME_DATE")
     private Timestamp claimDate;
-    @OneToOne(fetch = FetchType.LAZY, targetEntity = ClientEntity.class, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, targetEntity = ClientTypeEntity.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "CLIENT_ID", unique = true)
-    private ClientEntity client;
-    @OneToOne(fetch = FetchType.LAZY, targetEntity = LoanEntity.class, cascade = CascadeType.ALL)
+    private ClientTypeEntity client;
+    @OneToOne(fetch = FetchType.LAZY, targetEntity = LoanTypeEntity.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "LOAN_ID", unique = true)
-    private LoanEntity loan;
-    @OneToOne(fetch = FetchType.LAZY, targetEntity = InsuranceEntity.class, cascade = CascadeType.ALL)
+    private LoanTypeEntity loan;
+    @OneToOne(fetch = FetchType.LAZY, targetEntity = InsuranceTypeEntity.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "INSURANCE_ID", unique = true)
-    private InsuranceEntity insurance;
-    @OneToMany(targetEntity = AdditionalContactEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
+    private InsuranceTypeEntity insurance;
+    @OneToMany(targetEntity = AdditionalContactTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "APPLICATION_ID")
-    private List<AdditionalContactEntity> additionalContacts;
+    private List<AdditionalContactTypeEntity> additionalContacts;
     @Column(name = "MANAGER_NAME")
     private String managerName;
     @OneToMany(targetEntity = ApplicationHistoryEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)

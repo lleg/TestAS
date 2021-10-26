@@ -7,7 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.digitalspirit.asaka.bpm.entity.*;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.math.BigInteger;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Optional;
@@ -32,7 +31,7 @@ class ApplicationRepositoryTest {
         Date date = new Date(System.currentTimeMillis());
         String uuid = UUID.randomUUID().toString();
 
-        ClientEntity clientEntity = new ClientEntity();
+        ClientTypeEntity clientEntity = new ClientTypeEntity();
         clientEntity.setClientID("1111111");
         clientEntity.setClientCode("7777");
         clientEntity.setClientUID("111111UID");

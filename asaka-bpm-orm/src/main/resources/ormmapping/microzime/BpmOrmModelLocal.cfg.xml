@@ -30,21 +30,21 @@
 		<property name="hibernate.jdbc.use_streams_for_binary">false</property>
 
 		<mapping class="ru.digitalspirit.asaka.bpm.entity.ApplicationEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.AdditionalContactEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.AdditionalIncomeEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.AddressEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.AdditionalContactTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.AdditionalIncomeTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.AddressTypeEntity"/>
 		<mapping class="ru.digitalspirit.asaka.bpm.entity.ApplicationHistoryEntity"/>
 		<mapping class="ru.digitalspirit.asaka.bpm.entity.AttachedDocumentEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.ClientEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.CurrentLoanEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.DepositInfoEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.ClientTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.CurrentLoanTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.DepositInfoTypeEntity"/>
 		<mapping class="ru.digitalspirit.asaka.bpm.entity.DocumentEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.JobInfoEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.LoanEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.PhoneEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.JobInfoTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.LoanTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.PhoneTypeEntity"/>
 		<mapping class="ru.digitalspirit.asaka.bpm.entity.RelatedPersonEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.InsuranceEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.CommentEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.InsuranceTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.CommentTypeEntity"/>
 
 	</session-factory>
 </hibernate-configuration>

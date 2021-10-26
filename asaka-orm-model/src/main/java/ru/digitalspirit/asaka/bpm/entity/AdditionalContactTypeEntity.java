@@ -14,7 +14,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @Entity
 @Table(name = "ADDITIONAL_CONTACT")
-public class AdditionalContactEntity {
+public class AdditionalContactTypeEntity {
     @Id
     @GeneratedValue(generator = "SEQ_ADDITIONAL_CONTACT")
     @SequenceGenerator(name = "SEQ_ADDITIONAL_CONTACT", sequenceName = "SEQ_ADDITIONAL_CONTACT", allocationSize = 1)
@@ -33,7 +33,7 @@ public class AdditionalContactEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AdditionalContactEntity that = (AdditionalContactEntity) o;
+        AdditionalContactTypeEntity that = (AdditionalContactTypeEntity) o;
         return id.equals(that.id);
     }
 

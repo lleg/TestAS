@@ -15,7 +15,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @Entity
 @Table(name = "LOAN")
-public class LoanEntity {
+public class LoanTypeEntity {
 
     @Id
     @GeneratedValue(generator = "SEQ_LOAN")
@@ -69,7 +69,7 @@ public class LoanEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        LoanEntity that = (LoanEntity) o;
+        LoanTypeEntity that = (LoanTypeEntity) o;
         return id.equals(that.id);
     }
 

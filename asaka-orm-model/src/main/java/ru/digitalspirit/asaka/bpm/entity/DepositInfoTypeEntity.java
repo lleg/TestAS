@@ -14,7 +14,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @Entity
 @Table(name = "DEPOSIT_INFO")
-public class DepositInfoEntity {
+public class DepositInfoTypeEntity {
     @Id
     @GeneratedValue(generator = "SEQ_DEPOSIT_INFO")
     @SequenceGenerator(name = "SEQ_DEPOSIT_INFO", sequenceName = "SEQ_DEPOSIT_INFO", allocationSize = 1)
@@ -29,7 +29,7 @@ public class DepositInfoEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        DepositInfoEntity that = (DepositInfoEntity) o;
+        DepositInfoTypeEntity that = (DepositInfoTypeEntity) o;
         return id.equals(that.id);
     }
 

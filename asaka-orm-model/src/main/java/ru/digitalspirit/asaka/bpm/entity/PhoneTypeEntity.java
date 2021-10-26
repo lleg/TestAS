@@ -13,7 +13,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @Entity
 @Table(name = "PHONE_INFO")
-public class PhoneEntity {
+public class PhoneTypeEntity {
     @Id
     @GeneratedValue(generator = "SEQ_PHONE")
     @SequenceGenerator(name = "SEQ_PHONE", sequenceName = "SEQ_PHONE", allocationSize = 1)
@@ -36,7 +36,7 @@ public class PhoneEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PhoneEntity that = (PhoneEntity) o;
+        PhoneTypeEntity that = (PhoneTypeEntity) o;
         return id.equals(that.id);
     }
 

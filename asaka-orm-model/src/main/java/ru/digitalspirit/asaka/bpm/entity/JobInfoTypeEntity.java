@@ -15,7 +15,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @Entity
 @Table(name = "JOB_INFO")
-public class JobInfoEntity {
+public class JobInfoTypeEntity {
     @Id
     @GeneratedValue(generator = "SEQ_JOB_INFO")
     @SequenceGenerator(name = "SEQ_JOB_INFO", sequenceName = "SEQ_JOB_INFO", allocationSize = 1)
@@ -48,7 +48,7 @@ public class JobInfoEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        JobInfoEntity that = (JobInfoEntity) o;
+        JobInfoTypeEntity that = (JobInfoTypeEntity) o;
         return id.equals(that.id);
     }
 

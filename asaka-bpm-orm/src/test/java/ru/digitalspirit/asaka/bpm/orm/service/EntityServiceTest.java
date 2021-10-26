@@ -26,18 +26,18 @@ public class EntityServiceTest {
         Timestamp date1 = new Timestamp(System.currentTimeMillis());
         Date date = new Date(System.currentTimeMillis());
 
-        AdditionalIncomeEntity additionalIncomeEntity = AdditionalIncomeEntity.builder()
+        AdditionalIncomeTypeEntity additionalIncomeEntity = AdditionalIncomeTypeEntity.builder()
                 .incomeType("type1")
                 .sum(BigDecimal.valueOf(124313.6)).build();
 
-        AddressEntity addressEntity1 = AddressEntity.builder().addressType("Dhtasf")
+        AddressTypeEntity addressEntity1 = AddressTypeEntity.builder().addressType("Dhtasf")
                 .city("Piter")
                 .country("Russia")
                 .house("2")
                 .postalCode("234534")
                 .apartment("123").build();
 
-        AddressEntity addressEntity2 = AddressEntity.builder().addressType("Dhtasf")
+        AddressTypeEntity addressEntity2 = AddressTypeEntity.builder().addressType("Dhtasf")
                 .city("Moscow")
                 .country("Russia")
                 .house("5")
@@ -45,16 +45,16 @@ public class EntityServiceTest {
                 .apartment("4").build();
 
 
-        CurrentLoanEntity currentLoanEntity1 = CurrentLoanEntity.builder()
+        CurrentLoanTypeEntity currentLoanEntity1 = CurrentLoanTypeEntity.builder()
                 .sum(BigDecimal.valueOf(324.4))
                 .creditBank("Alfa")
                 .monthlyPayment(BigDecimal.valueOf(20.4)).build();
 
-        DepositInfoEntity depositInfoEntity = DepositInfoEntity.builder()
+        DepositInfoTypeEntity depositInfoEntity = DepositInfoTypeEntity.builder()
                 .sum(BigDecimal.valueOf(1324.6))
                 .bank("Alfa").build();
 
-        JobInfoEntity jobInfoEntity = JobInfoEntity.builder().inn("124353452356")
+        JobInfoTypeEntity jobInfoEntity = JobInfoTypeEntity.builder().inn("124353452356")
                 .bankSalary("Alfa")
                 .employerName("SPIRIT")
                 .startJobDate(date)
@@ -67,48 +67,48 @@ public class EntityServiceTest {
                 .series("1234")
                 .number("1234125").build();
 
-        PhoneEntity phoneEntity = PhoneEntity.builder()
+        PhoneTypeEntity phoneEntity = PhoneTypeEntity.builder()
                 .number("12352345235")
                 .primaryPhone(true).build();
 
-        List<PhoneEntity> phoneList = new ArrayList();
+        List<PhoneTypeEntity> phoneList = new ArrayList();
         phoneList.add(phoneEntity);
 
         //---- REL PERSON
 
-        AdditionalIncomeEntity additionalIncomeEntityRel = AdditionalIncomeEntity.builder()
+        AdditionalIncomeTypeEntity additionalIncomeEntityRel = AdditionalIncomeTypeEntity.builder()
                 .incomeType("type23")
                 .sum(BigDecimal.valueOf(124313.6)).build();
 
-        AddressEntity addressEntity1Rel = AddressEntity.builder().addressType("Прописка")
+        AddressTypeEntity addressEntity1Rel = AddressTypeEntity.builder().addressType("Прописка")
                 .city("Voroneg")
                 .country("Russia")
                 .house("54")
                 .postalCode("3456")
                 .apartment("7").build();
 
-        CurrentLoanEntity currentLoanEntity1Rel = CurrentLoanEntity.builder()
+        CurrentLoanTypeEntity currentLoanEntity1Rel = CurrentLoanTypeEntity.builder()
                 .sum(BigDecimal.valueOf(324.4))
                 .creditBank("VTB").build();
 
-        JobInfoEntity jobInfoEntityRel = JobInfoEntity.builder()
+        JobInfoTypeEntity jobInfoEntityRel = JobInfoTypeEntity.builder()
                 .inn("124353452356")
                 .bankSalary("AlfaBank")
                 .employerName("WORK")
                 .startJobDate(date)
                 .totalJobExperienceMonths(12).build();
 
-        PhoneEntity phoneEntityRel = PhoneEntity.builder()
+        PhoneTypeEntity phoneEntityRel = PhoneTypeEntity.builder()
                 .number("12352345235")
                 .primaryPhone(true).build();
 
-        List<PhoneEntity> phoneEntityList = new ArrayList();
+        List<PhoneTypeEntity> phoneEntityList = new ArrayList();
         phoneEntityList.add(phoneEntityRel);
-        List<AdditionalIncomeEntity> additionalIncomeEntityListRel = new ArrayList();
+        List<AdditionalIncomeTypeEntity> additionalIncomeEntityListRel = new ArrayList();
         additionalIncomeEntityListRel.add(additionalIncomeEntityRel);
-        List<AddressEntity> addressEntityListRel = new ArrayList();
+        List<AddressTypeEntity> addressEntityListRel = new ArrayList();
         addressEntityListRel.add(addressEntity1Rel);
-        List<CurrentLoanEntity> currentLoanEntityListRel = new ArrayList();
+        List<CurrentLoanTypeEntity> currentLoanEntityListRel = new ArrayList();
         currentLoanEntityListRel.add(currentLoanEntity1Rel);
 
         RelatedPersonEntity relatedPersonEntity = RelatedPersonEntity.builder()
@@ -122,17 +122,17 @@ public class EntityServiceTest {
 
 
         //------------------------------------
-        List<AdditionalIncomeEntity> additionalIncomeEntityList = new ArrayList();
+        List<AdditionalIncomeTypeEntity> additionalIncomeEntityList = new ArrayList();
         additionalIncomeEntityList.add(additionalIncomeEntity);
 
-        List<AddressEntity> addressEntityList = new ArrayList();
+        List<AddressTypeEntity> addressEntityList = new ArrayList();
         addressEntityList.add(addressEntity1);
         addressEntityList.add(addressEntity2);
 
-        List<CurrentLoanEntity> currentLoanEntityList = new ArrayList();
+        List<CurrentLoanTypeEntity> currentLoanEntityList = new ArrayList();
         currentLoanEntityList.add(currentLoanEntity1);
 
-        List<DepositInfoEntity> depositInfoEntityList = new ArrayList();
+        List<DepositInfoTypeEntity> depositInfoEntityList = new ArrayList();
         depositInfoEntityList.add(depositInfoEntity);
 
         List<DocumentEntity> documentEntityList = new ArrayList();
@@ -141,7 +141,7 @@ public class EntityServiceTest {
         List<RelatedPersonEntity> relatedPersonEntityList = new ArrayList();
         relatedPersonEntityList.add(relatedPersonEntity);
 
-        ClientEntity clientEntity = ClientEntity.builder()
+        ClientTypeEntity clientEntity = ClientTypeEntity.builder()
                 .clientID("1111111")
                 .clientCode("7777")
                 .clientUID("111111UID")
@@ -162,7 +162,7 @@ public class EntityServiceTest {
                 .isRealEstate(true)
                 .relatedPersons(relatedPersonEntityList).build();
 
-        AdditionalContactEntity additionalContactEntity = AdditionalContactEntity.builder()
+        AdditionalContactTypeEntity additionalContactEntity = AdditionalContactTypeEntity.builder()
                 .phone("23452346256")
                 .fio("Ivanov Ivan Petrovich")
                 .relationType("1").build();
@@ -172,12 +172,12 @@ public class EntityServiceTest {
                 .documentDate(date)
                 .guid(UUID.randomUUID().toString()).build();
 
-        LoanEntity loanEntity = LoanEntity.builder()
+        LoanTypeEntity loanEntity = LoanTypeEntity.builder()
                 .currency("RUB")
                 .sum(BigDecimal.valueOf(123442.6))
                 .issuanceForm("asfwqfwe").build();
 
-        List<AdditionalContactEntity> additionalContactEntityList = new ArrayList();
+        List<AdditionalContactTypeEntity> additionalContactEntityList = new ArrayList();
         additionalContactEntityList.add(additionalContactEntity);
 
         List<AttachedDocumentEntity> attachedDocumentEntityList = new ArrayList();

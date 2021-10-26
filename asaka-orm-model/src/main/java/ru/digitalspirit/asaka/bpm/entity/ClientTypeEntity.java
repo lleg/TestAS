@@ -15,7 +15,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @Entity
 @Table(name = "CLIENT")
-public class ClientEntity {
+public class ClientTypeEntity {
 
     @Id
     @GeneratedValue(generator = "SEQ_CLIENT")
@@ -55,31 +55,31 @@ public class ClientEntity {
     @OneToMany(targetEntity = DocumentEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "CLIENT_ID")
     private List<DocumentEntity> documents;
-    @OneToMany(targetEntity = AddressEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
+    @OneToMany(targetEntity = AddressTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "CLIENT_ID")
-    private List<AddressEntity> addresses;
+    private List<AddressTypeEntity> addresses;
     @Column(name = "REG_ADDR_EQ_RES_ADDR")
     private Boolean regAddrEqualseResAddr;
     @Column(name = "IS_CO_BORROWED")
     private Boolean isCoBorrowed;
-    @OneToMany(targetEntity = PhoneEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
+    @OneToMany(targetEntity = PhoneTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "CLIENT_ID")
-    private List<PhoneEntity> phone;
-    @OneToOne(fetch = FetchType.LAZY, targetEntity = JobInfoEntity.class, cascade = CascadeType.ALL)
+    private List<PhoneTypeEntity> phone;
+    @OneToOne(fetch = FetchType.LAZY, targetEntity = JobInfoTypeEntity.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "JOB_INFO_ID", unique = true)
-    private JobInfoEntity jobInfo;
+    private JobInfoTypeEntity jobInfo;
     @Column(name = "IS_ADDITIONAL_INCOME")
     private Boolean isAdditionalIncome;
-    @OneToMany(targetEntity = AdditionalIncomeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
+    @OneToMany(targetEntity = AdditionalIncomeTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "CLIENT_ID")
-    private List<AdditionalIncomeEntity> additionalIncome;
+    private List<AdditionalIncomeTypeEntity> additionalIncome;
     @Column(name = "IS_CAR")
     private Boolean isCar;
     @Column(name = "IS_REAL_ESTATE")
     private Boolean isRealEstate;
-    @OneToMany(targetEntity = DepositInfoEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
+    @OneToMany(targetEntity = DepositInfoTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "CLIENT_ID")
-    private List<DepositInfoEntity> depositInfo;
+    private List<DepositInfoTypeEntity> depositInfo;
     @Column(name = "MARITAL_STATUS")
     private String maritalStatus;
     @Column(name = "CHILDREN_NUM_0_TO_3")
@@ -96,9 +96,9 @@ public class ClientEntity {
     private Boolean isRetiree;
     @Column(name = "NINPS_ACCOUNT")
     private String ninpsAccount;
-    @OneToMany(targetEntity = CurrentLoanEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
+    @OneToMany(targetEntity = CurrentLoanTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "CLIENT_ID")
-    private List<CurrentLoanEntity> currentLoans;
+    private List<CurrentLoanTypeEntity> currentLoans;
     @OneToMany(targetEntity = RelatedPersonEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "CLIENT_ID")
     private List<RelatedPersonEntity> relatedPersons;
@@ -107,7 +107,7 @@ public class ClientEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ClientEntity that = (ClientEntity) o;
+        ClientTypeEntity that = (ClientTypeEntity) o;
         return id.equals(that.id);
     }
 

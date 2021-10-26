@@ -13,7 +13,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @Entity
 @Table(name = "ADDRESS")
-public class AddressEntity {
+public class AddressTypeEntity {
 
     @Id
     @GeneratedValue(generator = "SEQ_ADDRESS")
@@ -81,7 +81,7 @@ public class AddressEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AddressEntity that = (AddressEntity) o;
+        AddressTypeEntity that = (AddressTypeEntity) o;
         return id.equals(that.id);
     }
 
