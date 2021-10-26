@@ -99,6 +99,9 @@ public class ClientTypeEntity {
     @OneToMany(targetEntity = CurrentLoanTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "CLIENT_ID")
     private List<CurrentLoanTypeEntity> currentLoans;
+    @OneToMany(targetEntity = IncomeAndTaxTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
+    @JoinColumn(name = "CLIENT_ID")
+    private List<IncomeAndTaxTypeEntity> incomeAndTax;
     @OneToMany(targetEntity = RelatedPersonEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "CLIENT_ID")
     private List<RelatedPersonEntity> relatedPersons;

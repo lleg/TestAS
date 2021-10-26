@@ -62,8 +62,6 @@ public class RelatedPersonEntity {
     private List<AddressTypeEntity> addresses;
     @Column(name = "REG_ADDR_EQ_RES_ADDR")
     private Boolean regAddrEqualseResAddr;
-    @Column(name = "IS_COBORROWED")
-    private Boolean isCoBorrowed;
     @OneToMany(targetEntity = PhoneTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "REL_PERSON_ID")
     private List<PhoneTypeEntity> phone;
@@ -101,6 +99,9 @@ public class RelatedPersonEntity {
     @OneToMany(targetEntity = CurrentLoanTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "REL_PERSON_ID")
     private List<CurrentLoanTypeEntity> currentLoans;
+    @OneToMany(targetEntity = IncomeAndTaxTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
+    @JoinColumn(name = "REL_PERSON_ID")
+    private List<IncomeAndTaxTypeEntity> incomeAndTax;
 
     @Override
     public boolean equals(Object o) {
