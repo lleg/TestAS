@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
-<xs:schema xmlns:grn="http://Application.NFO.ru" xmlns:clnt="http://Client.NFO.ru" xmlns:ln="http://Loan.NFO.ru" xmlns:ins="http://Insurance.NFO.ru" xmlns:atd="http://AttachedDocument.NFO.ru" xmlns:apph="http://ApplicationHistory.NFO.ru" xmlns:nfocomm="http://NFOCommon.NFO.ru" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://Guaranty.NFO.ru" targetNamespace="http://Guaranty.NFO.ru" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:grn="http://Application.NFO.ru" xmlns:clnt="http://Client.NFO.ru" xmlns:ln="http://Loan.NFO.ru" xmlns:ins="http://Insurance.NFO.ru" xmlns:atd="http://AttachedDocument.NFO.ru" xmlns:apph="http://ApplicationHistory.NFO.ru" xmlns:nfocomm="http://NFOCommon.NFO.ru" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://Microloan.NFO.ru" targetNamespace="http://Microloan.NFO.ru" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:import namespace="http://Client.NFO.ru" schemaLocation="Client.xsd"/>
 	<xs:import namespace="http://Loan.NFO.ru" schemaLocation="Loan.xsd"/>
 	<xs:import namespace="http://Insurance.NFO.ru" schemaLocation="Insurance.xsd"/>
