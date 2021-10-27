@@ -148,19 +148,19 @@ public class EntityServiceTest {
                 .clientCodeCrm("7777CRM")
                 .fullName("Petrov Petr Petrovich")
                 .additionalIncome(additionalIncomeEntityList)
-                .addresses(addressEntityList)
+                .address(addressEntityList)
                 .birthDate(date)
                 .adultChildrenNum(2)
-                .currentLoans(currentLoanEntityList)
+                .currentLoan(currentLoanEntityList)
                 .depositInfo(depositInfoEntityList)
                 .inn("132412355143")
-                .regAddrEqualseResAddr(true)
+                .regAddrEqualsResAddr(true)
                 .isCar(true)
                 .jobInfo(jobInfoEntity)
-                .documents(documentEntityList)
+                .document(documentEntityList)
                 .phone(phoneList)
                 .isRealEstate(true)
-                .relatedPersons(relatedPersonEntityList).build();
+                .relatedPerson(relatedPersonEntityList).build();
 
         AdditionalContactTypeEntity additionalContactEntity = AdditionalContactTypeEntity.builder()
                 .phone("23452346256")
@@ -189,7 +189,7 @@ public class EntityServiceTest {
                 .claimDate(date1)
                 .claimNumBpm("qqq111111")
                 .branch("1234215")
-                .additionalContacts(additionalContactEntityList)
+                .additionalContact(additionalContactEntityList)
                 .status("23")
                 .attachedDocuments(attachedDocumentEntityList)
                 .loan(loanEntity).build();

@@ -54,14 +54,16 @@ public class ClientTypeEntity {
     private String pinFl;
     @OneToMany(targetEntity = DocumentEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "CLIENT_ID")
-    private List<DocumentEntity> documents;
+    private List<DocumentEntity> document;
     @OneToMany(targetEntity = AddressTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "CLIENT_ID")
-    private List<AddressTypeEntity> addresses;
+    private List<AddressTypeEntity> address;
     @Column(name = "REG_ADDR_EQ_RES_ADDR")
-    private Boolean regAddrEqualseResAddr;
+    private Boolean regAddrEqualsResAddr;
     @Column(name = "IS_CO_BORROWED")
     private Boolean isCoBorrowed;
+    @Column(name = "IS_GUARANTOR")
+    private Boolean isGuarantor;
     @OneToMany(targetEntity = PhoneTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "CLIENT_ID")
     private List<PhoneTypeEntity> phone;
@@ -91,20 +93,20 @@ public class ClientTypeEntity {
     @Column(name = "EDUCATION")
     private String education;
     @Column(name = "TYPE_OF_HOUSING")
-    private String TypeOfHousing;
+    private String typeOfHousing;
     @Column(name = "IS_RETIREE")
     private Boolean isRetiree;
     @Column(name = "NINPS_ACCOUNT")
     private String ninpsAccount;
     @OneToMany(targetEntity = CurrentLoanTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "CLIENT_ID")
-    private List<CurrentLoanTypeEntity> currentLoans;
+    private List<CurrentLoanTypeEntity> currentLoan;
     @OneToMany(targetEntity = IncomeAndTaxTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "CLIENT_ID")
     private List<IncomeAndTaxTypeEntity> incomeAndTax;
     @OneToMany(targetEntity = RelatedPersonEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "CLIENT_ID")
-    private List<RelatedPersonEntity> relatedPersons;
+    private List<RelatedPersonEntity> relatedPerson;
 
     @Override
     public boolean equals(Object o) {

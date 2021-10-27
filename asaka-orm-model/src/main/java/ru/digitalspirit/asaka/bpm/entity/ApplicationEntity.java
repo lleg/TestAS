@@ -50,7 +50,7 @@ public class ApplicationEntity {
     private InsuranceTypeEntity insurance;
     @OneToMany(targetEntity = AdditionalContactTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "APPLICATION_ID")
-    private List<AdditionalContactTypeEntity> additionalContacts;
+    private List<AdditionalContactTypeEntity> additionalContact;
     @Column(name = "MANAGER_NAME")
     private String managerName;
     @OneToMany(targetEntity = ApplicationHistoryEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
