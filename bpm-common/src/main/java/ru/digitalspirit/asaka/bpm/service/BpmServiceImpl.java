@@ -16,6 +16,8 @@ import ru.digitalspirit.asaka.bpm.model.process.ProcessDetailsBody;
 import ru.digitalspirit.asaka.bpm.model.task.AssignedType;
 import ru.digitalspirit.asaka.bpm.model.task.TaskClientSettings;
 import ru.digitalspirit.asaka.bpm.model.task.TaskDetailsBody;
+import ru.digitalspirit.asaka.config.enums.ParameterCode;
+import ru.digitalspirit.asaka.config.service.ConfigParametersService;
 //import ru.digitalspirit.asaka.config.enums.ParameterCode;
 //import ru.digitalspirit.asaka.config.service.ConfigParametersService;
 
@@ -52,8 +54,8 @@ public class BpmServiceImpl implements BpmService {
     @Autowired
     private JSessionIdHelper sessionHelper;
 
-//    @Autowired
-//    private ConfigParametersService configParametersService;
+    @Autowired
+    private ConfigParametersService configParametersService;
 
     /**
      * {@inheritDoc}
@@ -821,7 +823,7 @@ public class BpmServiceImpl implements BpmService {
      * @return Server URL
      */
     String getServerURL() {
-        return "https://84.23.55.153:9444/";//configParametersService.getParameterValue(ParameterCode.BPM_SERVER_URL);
+        return configParametersService.getParameterValue(ParameterCode.BPM_SERVER_URL);//"https://84.23.55.153:9444/";//configParametersService.getParameterValue(ParameterCode.BPM_SERVER_URL);
     }
 
     /**
@@ -830,7 +832,7 @@ public class BpmServiceImpl implements BpmService {
      * @return Server user name
      */
     String getUserName() {
-        return "deadmin";//configParametersService.getParameterValue(ParameterCode.BPM_SERVER_LOGIN);
+        return configParametersService.getParameterValue(ParameterCode.BPM_SERVER_LOGIN);//"deadmin";//
     }
 
     /**
@@ -839,7 +841,7 @@ public class BpmServiceImpl implements BpmService {
      * @return Server user password
      */
     String getPassword() {
-        return "deadmin";//configParametersService.getParameterValue(ParameterCode.BPM_SERVER_PASSWORD);
+        return configParametersService.getParameterValue(ParameterCode.BPM_SERVER_PASSWORD);//"deadmin";//
     }
 
 }
