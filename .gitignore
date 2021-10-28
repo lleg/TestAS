@@ -1,7 +1,7 @@
 #Gradle ignores
 .gradle
-# gradle
-# gradle/
+gradle
+gradle/
 build/
 delivery/deliveries/
 

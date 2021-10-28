@@ -29,23 +29,25 @@ public class StartProcessService {
 
     public String startProcess(StartProcessRequestDTO inputData){
         String appId = inputData.getApplicationId();
+        String claimNumBpm = inputData.getClaimNumBpm();
         String process = inputData.getProcessName();
         log.debug("################################# StartProcessService: START PROCESS " + process + " for Application ID = " + appId);
         ApplicationEntity applicationEntity = applicationService.findByApplicationId(new BigInteger(appId));
-        if(applicationEntity == null){
-            throw new NotFoundException("Application with ID = " + appId + " not found!");
+        if(!applicationService.existsByApplicationNumber(claimNumBpm)){
+            throw new NotFoundException("Application with claimNumBpm = " + claimNumBpm + " not found!");
         }
 
-        String processId = bpmServiceImpl.startApplication(process, getProcessInput(appId));
+        String processId = bpmServiceImpl.startApplication(process, getProcessInput(appId, claimNumBpm));
         log.debug("################################# StartProcessService: Process ID = " + processId);
         applicationEntity.setStatus(APP_STATUS_NEW);
         applicationService.save(applicationEntity);
         return appId;
     }
 
-    private Map<String, Object> getProcessInput(String applicationId) {
+    private Map<String, Object> getProcessInput(String applicationId, String claimNumBpm) {
         Map<String, Object> applicationInput = new HashMap<>();
         applicationInput.put("applicationId", applicationId);
+        applicationInput.put("claimNumBpm", claimNumBpm);
         Map<String, Object> inputData = new HashMap<>();
         inputData.put("applicationInput", applicationInput);
         return inputData;
