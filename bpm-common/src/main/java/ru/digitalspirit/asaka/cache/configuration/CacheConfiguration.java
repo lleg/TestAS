@@ -11,15 +11,15 @@ import ru.digitalspirit.asaka.settings.Environment;
 @Configuration
 public class CacheConfiguration {
 
-    @Profile("server")
-    @Bean
-    public CacheService cacheService() {
-        return new CacheServiceImpl(
-                Environment.getCacheJndi(),
-                Environment.getCachePriority(),
-                Environment.getCacheTimeToLive(),
-                Environment.getCacheInactivityTime());
-    }
+//    @Profile("server")
+//    @Bean
+//    public CacheService cacheService() {
+//        return new CacheServiceImpl(
+//                Environment.getCacheJndi(),
+//                Environment.getCachePriority(),
+//                Environment.getCacheTimeToLive(),
+//                Environment.getCacheInactivityTime());
+//    }
 
     @Profile("local")
     @Bean

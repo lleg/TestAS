@@ -6,6 +6,7 @@ import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.*;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jndi.JndiObjectFactoryBean;
+import org.springframework.jndi.JndiTemplate;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
@@ -35,11 +36,13 @@ public class OrmMicroloanConfiguration {
         JndiObjectFactoryBean factoryBean = new JndiObjectFactoryBean();
         factoryBean.setProxyInterface(DataSource.class);
         factoryBean.setResourceRef(true);
-        factoryBean.setJndiName("jdbc/asaka_microloan");
+        factoryBean.setJndiName("java:comp/env/jdbc/asaka_microloan");
         factoryBean.setLookupOnStartup(false);
         factoryBean.afterPropertiesSet();
         return (DataSource)factoryBean.getObject();
     }
+
+
 
     @Profile("local")
     @Bean(name = "ormMicroloanModelDataSource")
@@ -60,7 +63,7 @@ public class OrmMicroloanConfiguration {
         lcemfb.setPackagesToScan("ru.digitalspirit.asaka.bpm.entity");
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setDatabase(Database.ORACLE);
-        vendorAdapter.setShowSql(false);
+        vendorAdapter.setShowSql(true);
         lcemfb.setJpaVendorAdapter(vendorAdapter);
         lcemfb.setJpaProperties(additionalProperties());
         return lcemfb;
@@ -76,7 +79,7 @@ public class OrmMicroloanConfiguration {
     Properties additionalProperties() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.globally_quoted_identifiers", "true");
-        properties.setProperty("hibernate.hbm2ddl.auto", "validate");
+        properties.setProperty("hibernate.hbm2ddl.auto", "none");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle12cDialect");
         properties.setProperty("hibernate.show_sql", "false");
         properties.setProperty("hibernate.event.merge.entity_copy_observer", "allow");

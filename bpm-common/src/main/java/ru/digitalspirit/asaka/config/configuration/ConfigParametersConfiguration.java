@@ -44,7 +44,8 @@ public class ConfigParametersConfiguration {
         //factoryBean.setExpectedType(DataSource.class);
         factoryBean.setProxyInterface(DataSource.class);
         factoryBean.setResourceRef(true);
-        factoryBean.setJndiName("jdbc/bpm_common");
+        //factoryBean.setJndiName("jdbc/bpm_common");
+        factoryBean.setJndiName("java:comp/env/jdbc/bpm_common");
         factoryBean.setLookupOnStartup(false);
         factoryBean.afterPropertiesSet();
         return (DataSource)factoryBean.getObject();
@@ -86,7 +87,7 @@ public class ConfigParametersConfiguration {
     Properties additionalProperties() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.globally_quoted_identifiers", "true");
-        properties.setProperty("hibernate.hbm2ddl.auto", "validate");
+        properties.setProperty("hibernate.hbm2ddl.auto", "none");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle12cDialect");
         properties.setProperty("hibernate.show_sql", "false");
         properties.setProperty("spring.jpa.hibernate.use-new-id-generator-mappings", "false");
