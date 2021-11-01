@@ -8,9 +8,9 @@
 		<!-- properties -->
 
 		<property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
-		<property name="connection.url">jdbc:oracle:thin:@85.192.32.133:1521/BPMDB</property>
-		<property name="connection.username">NFO_TEST</property>
-		<property name="connection.password">NFO_TEST</property>
+		<property name="connection.url">jdbc:oracle:thin:@//89.208.209.112:1521/BPMDB</property>
+		<property name="connection.username">BPM_MICROLOAN</property>
+		<property name="connection.password">BPM_MICROLOAN</property>
 		<property name="hibernate.id.new_generator_mappings">true</property>
 		<property name="hibernate.dialect">ru.digitalspirit.asaka.bpm.orm.configuration.Oracle10gDialectExtended</property>
 		<property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
@@ -30,19 +30,24 @@
 		<property name="hibernate.jdbc.use_streams_for_binary">false</property>
 
 		<mapping class="ru.digitalspirit.asaka.bpm.entity.ApplicationEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.AdditionalContactEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.AdditionalIncomeEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.AddressEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.AdditionalContactTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.AdditionalIncomeTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.AddressTypeEntity"/>
 		<mapping class="ru.digitalspirit.asaka.bpm.entity.ApplicationHistoryEntity"/>
 		<mapping class="ru.digitalspirit.asaka.bpm.entity.AttachedDocumentEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.ClientEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.CurrentLoanEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.DepositInfoEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.ClientTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.CurrentLoanTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.DepositInfoTypeEntity"/>
 		<mapping class="ru.digitalspirit.asaka.bpm.entity.DocumentEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.JobInfoEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.LoanEntity"/>
-		<mapping class="ru.digitalspirit.asaka.bpm.entity.PhoneEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.JobInfoTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.LoanTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.PhoneTypeEntity"/>
 		<mapping class="ru.digitalspirit.asaka.bpm.entity.RelatedPersonEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.InsuranceTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.IncomeAndTaxTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.CommentTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.SolvencyTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.ScoringTypeEntity"/>
 
 	</session-factory>
 </hibernate-configuration>

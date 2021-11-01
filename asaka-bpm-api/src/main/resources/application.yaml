@@ -1,0 +1,45 @@
+spring:
+  profiles:
+    active: local
+---
+spring:
+  profiles: local
+server:
+  port: 8081
+  servlet:
+    context-path: /asaka-bpm
+logging:
+  config: classpath:tomcat-logback.xml
+  file: /var/log/tomcat/asaka-bpm.log
+
+#management:
+#  context-path: /monitor
+#  endpoints:
+#     enabled-by-default: false
+#     web:
+#        exposure:
+#           exclude: "*"
+#           include: httptrace,health
+#  security:
+#    enabled: true
+
+---
+spring:
+  profiles: server
+server:
+  port: 8081
+  servlet:
+    context-path: /asaka-bpm
+logging:
+  config: classpath:/bpm-logback.xml
+
+#management:
+#  context-path: /monitor
+#  endpoints:
+#    enabled-by-default: false
+#    web:
+#      exposure:
+#        exclude: "*"
+#        include: httptrace,health
+#  security:
+#    enabled: true

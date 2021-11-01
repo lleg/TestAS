@@ -18,6 +18,8 @@ import ru.digitalspirit.asaka.bpm.model.task.TaskClientSettings;
 import ru.digitalspirit.asaka.bpm.model.task.TaskDetailsBody;
 import ru.digitalspirit.asaka.config.enums.ParameterCode;
 import ru.digitalspirit.asaka.config.service.ConfigParametersService;
+//import ru.digitalspirit.asaka.config.enums.ParameterCode;
+//import ru.digitalspirit.asaka.config.service.ConfigParametersService;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -821,7 +823,7 @@ public class BpmServiceImpl implements BpmService {
      * @return Server URL
      */
     String getServerURL() {
-        return configParametersService.getParameterValue(ParameterCode.BPM_SERVER_URL);
+        return configParametersService.getParameterValue(ParameterCode.BPM_SERVER_URL);//"https://84.23.55.153:9444/";//configParametersService.getParameterValue(ParameterCode.BPM_SERVER_URL);
     }
 
     /**
@@ -830,7 +832,7 @@ public class BpmServiceImpl implements BpmService {
      * @return Server user name
      */
     String getUserName() {
-        return configParametersService.getParameterValue(ParameterCode.BPM_SERVER_LOGIN);
+        return configParametersService.getParameterValue(ParameterCode.BPM_SERVER_LOGIN);//"deadmin";//
     }
 
     /**
@@ -839,7 +841,7 @@ public class BpmServiceImpl implements BpmService {
      * @return Server user password
      */
     String getPassword() {
-        return configParametersService.getParameterValue(ParameterCode.BPM_SERVER_PASSWORD);
+        return configParametersService.getParameterValue(ParameterCode.BPM_SERVER_PASSWORD);//"deadmin";//
     }
 
 }

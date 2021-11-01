@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.system.module.type="sourceSet" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../../asaka-microloan-model/build/classes/java/main" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../asaka-microloan-model/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../../asaka-microloan-model/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../asaka-microloan-model/src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: io.springfox:springfox-swagger2:2.7.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.8.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jboss.forge.roaster:roaster-jdt:2.20.1.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.jboss.forge.roaster:roaster-api:2.20.1.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.projectlombok:lombok:1.16.4" level="project" />
+    <orderEntry type="library" name="Gradle: io.springfox:springfox-swagger-common:2.7.0" level="project" />
+    <orderEntry type="library" name="Gradle: io.swagger:swagger-models:1.5.13" level="project" />
+    <orderEntry type="library" name="Gradle: io.swagger:swagger-annotations:1.5.13" level="project" />
+    <orderEntry type="library" name="Gradle: io.springfox:springfox-schema:2.7.0" level="project" />
+    <orderEntry type="library" name="Gradle: io.springfox:springfox-spring-web:2.7.0" level="project" />
+    <orderEntry type="library" name="Gradle: io.springfox:springfox-spi:2.7.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.guava:guava:20.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml:classmate:1.4.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.plugin:spring-plugin-metadata:1.2.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.28" level="project" />
+    <orderEntry type="library" name="Gradle: org.mapstruct:mapstruct:1.1.0.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.springfox:springfox-core:2.7.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.reflections:reflections:0.9.11" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.1.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:5.1.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:5.1.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: net.bytebuddy:byte-buddy:1.9.16" level="project" />
+    <orderEntry type="library" name="Gradle: org.javassist:javassist:3.21.0-GA" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-expression:5.1.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-core:5.1.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-jcl:5.1.10.RELEASE" level="project" />
+  </component>
+</module>

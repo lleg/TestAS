@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 
-@Entity
+//@Entity
 @SequenceGenerator(name = "SEQ_TASKLIST", sequenceName = "SEQ_TASKLIST", allocationSize = 1)
 @Table(name = "TASK_LIST")
 @Getter

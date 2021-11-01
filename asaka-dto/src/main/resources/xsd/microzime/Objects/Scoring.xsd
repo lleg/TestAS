@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:scr="http://Scoring.NFO.ru" targetNamespace="http://Scoring.NFO.ru" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="ScoringType">
+		<xs:annotation>
+			<xs:documentation>Сведения о скоринге</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор записи в BPM</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DM0Result" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Результат проверки "Наличие арестов на счетах". 0 - не пройдено, 1 - пройдено</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DM1Result" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Результат проверки "Проверка AML". 0 - не пройдено, 1 - пройдено</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DM2Result" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Результат проверки "Проверка просрочки внутри Банка, ЧС, возраста клиента". 0 - не пройдено, 1 - пройдено</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DM3Result" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Результат проверки "Проверка кредитной истории". 0 - не пройдено, 1 - пройдено</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DM4Result" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Результат проверки "Проверка платежеспособности". 0 - не пройдено, 1 - пройдено</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RejectReason" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Причина отказа по скорингу</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RejectReasonNiki" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Причина отказа по скорингу для НИКИ</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CreditHistoryData" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Данные по кредитной истории, содержат JSON как текст</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IncomeTaxData" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Данные по доходам и налоговым отчислениям, содержат JSON как текст</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ScoreData" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Данные по скоринговому баллу, содержат JSON как текст</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Solvency" type="scr:SolvencyType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Параметры платежеспособности (ответ от DM4)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SolvencyType">
+		<xs:annotation>
+			<xs:documentation>Сведения о платежеспособности в результате скоринга</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор записи в BPM</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LoanTermName" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Наименование типа кредита по сроку</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LoanTerm" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код типа кредита по сроку</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LoanTermIntervalName" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Наименование интервала кредита</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LoanTermInterval" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код интервала кредита</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContractEndDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата завершения договора</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InterestRate" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ставка</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Term" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Период в месяцах</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Amount" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Сумма</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TypeOfferText" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Наименование предложения</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TypeOfferCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код предложения</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Coborrower" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ID созаемщика</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

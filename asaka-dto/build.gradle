@@ -1,0 +1,82 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+
+        classpath files("$buildDir/classes/java/main")
+    }
+}
+plugins {
+    id 'org.springframework.boot' version '2.1.9.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+
+}
+
+configurations {
+    generateModel
+}
+
+
+compileJava.options.encoding = 'UTF-8'
+
+
+sourceCompatibility = 1.8
+
+ext.modelPackageName = "ru.digitalspirit.asaka.microloan.model"
+ext.dtoPackageName = "ru.digitalspirit.asaka.microloan.dto"
+ext.xsdDirName = "src/main/resources/xsd/microzime/"
+//ext.xsdDirName = "c:/work/xsd/microzime"
+ext.modelName = "microzime"
+
+task generateDTO(dependsOn: 'classes') {
+    ext.javaSrcDirName = "src/main/java"
+    doLast {
+        ant.taskdef(name: 'generateDTO', classname: 'ru.digitalspirit.asaka.microloan.util.DTOGenerationUtil', classpath: configurations.compile.asPath)
+        ant.generateDTO(javaSrcDir: javaSrcDirName, xsdDir: xsdDirName, modelPackage: modelPackageName, dtoPackage: dtoPackageName, model: modelName)
+    }
+}
+
+task generateModel() {
+    System.setProperty('javax.xml.accessExternalSchema', 'all')   // for Java 8
+    ext.jaxbTargetDir = 'src/main/java/'
+    ext.schemas = ['**/*.xsd']
+    ext.bindingPath = 'src/main/resources/xjb/xsd-bindings.xjb'
+    doLast {
+        ant.taskdef(name: 'xjc', classname: 'org.jvnet.jaxb2_commons.xjc.XJC2Task', classpath: configurations.generateModel.asPath)
+        ant.jaxbTargetDir = jaxbTargetDir
+        ant.xjc(destdir: jaxbTargetDir, package: modelPackageName, binding: bindingPath) {
+            schema(dir: xsdDirName, includes: schemas.join(' '))
+            arg(value: "-Xsetters")
+            arg(value: "-Xsetters-mode=direct")   //for Collection setters
+            arg(value: "-Xsimplify")
+            arg(value: "-enableIntrospection")    //for Boolean getters
+        }
+    }
+}
+
+dependencies {
+    //compile(project(":bpm-common"))
+    compile files("$buildDir/classes/java/main")
+    compile("io.springfox:springfox-swagger2:2.7.0")
+    compile("com.fasterxml.jackson.core:jackson-annotations:2.8.0")
+    compile "org.jboss.forge.roaster:roaster-api:2.20.1.Final"
+    compile "org.jboss.forge.roaster:roaster-jdt:2.20.1.Final"
+    compileOnly 'org.projectlombok:lombok:1.18.10'
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
+    generateModel "com.sun.xml.bind:jaxb-core:2.2.7"
+    generateModel "com.sun.xml.bind:jaxb-impl:2.2.7"
+    generateModel "com.sun.xml.bind:jaxb-xjc:2.2.7"
+    generateModel "javax.xml.bind:jaxb-api:2.2.7"
+    generateModel "javax.activation:activation:1.1"
+    generateModel 'org.apache.cxf.xjcplugins:cxf-xjc-boolean:2.6.0'
+    generateModel "org.jvnet.jaxb2_commons:jaxb2-basics-ant:0.6.5"
+    generateModel "org.jvnet.jaxb2_commons:jaxb2-basics:0.6.4"
+    generateModel "org.jvnet.jaxb2_commons:jaxb2-basics-annotate:0.6.4"
+    generateModel "org.jvnet.jaxb2_commons:jaxb2-value-constructor:3.0"
+}

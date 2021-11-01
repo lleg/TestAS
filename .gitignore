@@ -1,0 +1,43 @@
+#Gradle ignores
+.gradle
+gradle
+gradle/
+build/
+delivery/deliveries/
+
+#Eclipse
+.settings
+.project
+.classpath
+.springBeans
+bin
+
+#IDEA project files and artifacts
+.idea
+*.iml
+*.ipr
+*.iws
+nbproject/
+out
+classes
+
+#Artifacts
+
+*.class
+*.war
+
+#Git merge original files
+*.orig
+
+#gradle-local.properties
+
+#So gradle wrapper works
+!gradle/wrapper/gradle-wrapper.jar
+
+#Nodejs
+node_modules
+
+# UI projects ignore
+package-lock.json
+dist/
+/schema

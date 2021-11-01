@@ -9,7 +9,8 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.10/625fc0055674dff70dbc76efa36d0f2c89b04a24/lombok-1.18.10.jar" />
         </processorPath>
         <module name="asaka-bpm.asaka-bpm-api.main" />
-        <module name="asaka-bpm.asaka-microzime-model.main" />
+        <module name="asaka-bpm.asaka-dto.main" />
+        <module name="asaka-bpm.asaka-bpm-services.main" />
         <module name="asaka-bpm.asaka-orm-model.main" />
         <module name="asaka-bpm.bpm-common.main" />
         <module name="asaka-bpm.asaka-refbook.main" />

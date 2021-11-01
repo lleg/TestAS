@@ -13,8 +13,11 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/asaka-bpm-api" />
             <option value="$PROJECT_DIR$/asaka-bpm-orm" />
-            <option value="$PROJECT_DIR$/asaka-microzime-model" />
+            <option value="$PROJECT_DIR$/asaka-bpm-services" />
+            <option value="$PROJECT_DIR$/asaka-bpm-sql" />
+            <option value="$PROJECT_DIR$/asaka-dto" />
             <option value="$PROJECT_DIR$/asaka-orm-model" />
+            <option value="$PROJECT_DIR$/asaka-orm-services" />
             <option value="$PROJECT_DIR$/asaka-refbook" />
             <option value="$PROJECT_DIR$/bpm-common" />
           </set>

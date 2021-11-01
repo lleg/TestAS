@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ln="http://Loan.NFO.ru" targetNamespace="http://Loan.NFO.ru" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="LoanType">
+		<xs:annotation>
+			<xs:documentation>Сведения о запрашиваемом кредите</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификатор записи в BPM</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LoanProduct" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Кредитный продукт</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ProductId" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ID продукта</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Sum" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Запрашиваемая сумма кредита</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LoanPurpose" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Цель кредитования</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TermInMonth" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Количество месяцев на кредит</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InterestRate" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Процентная ставка по кредиту</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StartDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата начала кредита</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RepaymentDay" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>День ежемесячного погашения</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RepaymentType" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Тип погашения</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CollateralType" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Тип обеспечения</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InsuranceFromCreditFunds" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Оплата страховой премии из кредитных средств</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InsuranceFromOwnFunds" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Оплата страховой премии из собственных средств</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Currency" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Валюта кредита</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MinInterestRate" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Процентная ставка по кредиту (минимальная)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MaxInterestRate" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Процентная ставка по кредиту (максимальная)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FacilitiesForRepaymentDate" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Флаг наличия льгот по погашению кредита</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MaxDeferralRepaymentPeriod" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Максимальный срок отсрочки по продукту</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InitialPayment" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Первоначальный взнос</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MinInitialPaymentPercent" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Процент первоначального взноса (минимальный)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MaxInitialPaymentPercent" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Процент первоначального взноса (максимальный)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IssuanceForm" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Форма выдачи кредита</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

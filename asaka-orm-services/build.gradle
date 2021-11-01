@@ -1,0 +1,33 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath files(["../libs/ojdbc6.jar"])
+    }
+}
+
+plugins {
+    id 'org.springframework.boot' version '2.1.9.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+group 'ru.digitalspirit.asaka'
+version '1.0'
+
+
+dependencies {
+    compile files("$buildDir/classes/java/main")
+    compile files("../libs/ojdbc6.jar")
+    compile(project(":asaka-orm-model"))
+    compile(project(":asaka-dto"))
+    compile("ma.glasnost.orika:orika-core:1.5.2")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    testImplementation 'org.junit.jupiter:junit-jupiter-api'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}

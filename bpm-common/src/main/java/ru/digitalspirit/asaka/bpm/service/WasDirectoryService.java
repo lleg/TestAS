@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-@Profile("server")
+@Profile("server1")
 public class WasDirectoryService implements DirectoryService{
 
     public String getUserEmail(String userId) {

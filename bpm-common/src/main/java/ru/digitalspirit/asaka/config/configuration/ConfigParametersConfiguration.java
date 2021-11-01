@@ -13,7 +13,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import ru.digitalspirit.asaka.bpm.configuration.BpmConfiguration;
-import ru.digitalspirit.asaka.role.configuration.RoleConfiguration;
+//import ru.digitalspirit.asaka.role.configuration.RoleConfiguration;
 import ru.digitalspirit.asaka.tasklist.service.TaskListService;
 import ru.digitalspirit.asaka.tasklist.service.TaskListServiceImpl;
 import ru.digitalspirit.asaka.config.service.ConfigParametersService;
@@ -24,22 +24,17 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-@EnableJpaRepositories(basePackages = {"ru.digitalspirit.nbu.config.repository","ru.digitalspirit.nbu.applicationlist.repository","ru.digitalspirit.nbu.tasklist.repository"},
+@EnableJpaRepositories(basePackages = {"ru.digitalspirit.asaka.config.repository","ru.digitalspirit.asaka.applicationlist.repository","ru.digitalspirit.nbu.tasklist.repository"},
         entityManagerFactoryRef="configEntityManagerFactory", transactionManagerRef = "configTransactionManager")
 @EnableTransactionManagement
-@EntityScan(basePackages = {"ru.digitalspirit.nbu.config.entity","ru.digitalspirit.nbu.applicationlist.entity","ru.digitalspirit.nbu.tasklist.entity"})
-@ComponentScan(basePackages = "ru.digitalspirit.nbu.applicationlist.service")
+@EntityScan(basePackages = {"ru.digitalspirit.asaka.config.entity","ru.digitalspirit.asaka.applicationlist.entity","ru.digitalspirit.asaka.tasklist.entity"})
+@ComponentScan(basePackages = "ru.digitalspirit.asaka.applicationlist.service")
 @Configuration
-@Import({BpmConfiguration.class , RoleConfiguration.class})
+@Import({BpmConfiguration.class /*, RoleConfiguration.class*/})
 public class ConfigParametersConfiguration {
     @Bean
     public ConfigParametersService configParametersService() {
         return new ConfigParametersServiceImpl();
-    }
-
-    @Bean
-    public TaskListService taskListService() {
-        return new TaskListServiceImpl();
     }
 
     @Profile("server")
@@ -49,7 +44,8 @@ public class ConfigParametersConfiguration {
         //factoryBean.setExpectedType(DataSource.class);
         factoryBean.setProxyInterface(DataSource.class);
         factoryBean.setResourceRef(true);
-        factoryBean.setJndiName("jdbc/nbu_common");
+        //factoryBean.setJndiName("jdbc/bpm_common");
+        factoryBean.setJndiName("java:comp/env/jdbc/bpm_common");
         factoryBean.setLookupOnStartup(false);
         factoryBean.afterPropertiesSet();
         return (DataSource)factoryBean.getObject();
@@ -61,9 +57,9 @@ public class ConfigParametersConfiguration {
     public DataSource localDataSource() {
         return DataSourceBuilder
                 .create()
-                .url("jdbc:oracle:thin:@//89.208.198.198:1521/BPMDB")
-                .username("NBU_COMMON")
-                .password("NBU_COMMON")
+                .url("jdbc:oracle:thin:@//89.208.209.112:1521/BPMDB")
+                .username("BPM_COMMON")
+                .password("BPM_COMMON")
                 .driverClassName("oracle.jdbc.OracleDriver")
                 .build();
     }
@@ -72,7 +68,7 @@ public class ConfigParametersConfiguration {
     public LocalContainerEntityManagerFactoryBean configEntityManagerFactory(@Qualifier("configDataSource")DataSource configDataSource) {
         LocalContainerEntityManagerFactoryBean lcemfb = new LocalContainerEntityManagerFactoryBean();
         lcemfb.setDataSource(configDataSource);
-        lcemfb.setPackagesToScan("ru.digitalspirit.nbu.config.entity","ru.digitalspirit.nbu.applicationlist.entity","ru.digitalspirit.nbu.tasklist.entity");
+        lcemfb.setPackagesToScan("ru.digitalspirit.asaka.config.entity","ru.digitalspirit.asaka.applicationlist.entity","ru.digitalspirit.asaka.tasklist.entity");
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setDatabase(Database.ORACLE);
         vendorAdapter.setShowSql(true);
@@ -91,7 +87,7 @@ public class ConfigParametersConfiguration {
     Properties additionalProperties() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.globally_quoted_identifiers", "true");
-        properties.setProperty("hibernate.hbm2ddl.auto", "validate");
+        properties.setProperty("hibernate.hbm2ddl.auto", "none");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle12cDialect");
         properties.setProperty("hibernate.show_sql", "false");
         properties.setProperty("spring.jpa.hibernate.use-new-id-generator-mappings", "false");
