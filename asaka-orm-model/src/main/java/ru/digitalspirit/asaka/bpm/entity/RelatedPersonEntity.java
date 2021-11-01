@@ -102,6 +102,9 @@ public class RelatedPersonEntity {
     @OneToMany(targetEntity = IncomeAndTaxTypeEntity.class, cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "REL_PERSON_ID")
     private List<IncomeAndTaxTypeEntity> incomeAndTax;
+    @OneToOne(fetch = FetchType.LAZY, targetEntity = ScoringTypeEntity.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "SCORING_ID", unique = true)
+    private ScoringTypeEntity scoring;
 
     @Override
     public boolean equals(Object o) {

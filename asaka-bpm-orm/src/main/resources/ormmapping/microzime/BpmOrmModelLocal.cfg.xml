@@ -46,6 +46,8 @@
 		<mapping class="ru.digitalspirit.asaka.bpm.entity.InsuranceTypeEntity"/>
 		<mapping class="ru.digitalspirit.asaka.bpm.entity.IncomeAndTaxTypeEntity"/>
 		<mapping class="ru.digitalspirit.asaka.bpm.entity.CommentTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.SolvencyTypeEntity"/>
+		<mapping class="ru.digitalspirit.asaka.bpm.entity.ScoringTypeEntity"/>
 
 	</session-factory>
 </hibernate-configuration>

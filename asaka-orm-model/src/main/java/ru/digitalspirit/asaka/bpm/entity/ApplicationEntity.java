@@ -25,6 +25,8 @@ public class ApplicationEntity {
     private String claimNumBpm;
     @Column(name = "CLAIM_NUM_CRM")
     private String claimNumCrm;
+    @Column(name = "CLAIM_NUM_ABS")
+    private String claimNumAbs;
     @Column(name = "BRANCH")
     private String branch;
     @Column(name = "STATUS")
