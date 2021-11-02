@@ -155,17 +155,17 @@
 					<xs:documentation>Семейное положение</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ChildrenNum0To3" type="xs:integer" minOccurs="0">
+			<xs:element name="ChildrenNum0To3" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Кол-во детей в возрасте от 0 до 3 лет</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ChildrenNum3To16" type="xs:integer" minOccurs="0">
+			<xs:element name="ChildrenNum3To16" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Кол-во детей в возрасте от 3 до 16 лет</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="AdultChildrenNum" type="xs:integer" minOccurs="0">
+			<xs:element name="AdultChildrenNum" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Кол-во детей в возрасте от 16 лет и более</xs:documentation>
 				</xs:annotation>

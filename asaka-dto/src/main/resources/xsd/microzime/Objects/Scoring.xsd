@@ -11,27 +11,27 @@
 					<xs:documentation>Идентификатор записи в BPM</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="DM0Result" type="xs:integer" minOccurs="0">
+			<xs:element name="DM0Result" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Результат проверки "Наличие арестов на счетах". 0 - не пройдено, 1 - пройдено</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="DM1Result" type="xs:integer" minOccurs="0">
+			<xs:element name="DM1Result" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Результат проверки "Проверка AML". 0 - не пройдено, 1 - пройдено</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="DM2Result" type="xs:integer" minOccurs="0">
+			<xs:element name="DM2Result" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Результат проверки "Проверка просрочки внутри Банка, ЧС, возраста клиента". 0 - не пройдено, 1 - пройдено</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="DM3Result" type="xs:integer" minOccurs="0">
+			<xs:element name="DM3Result" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Результат проверки "Проверка кредитной истории". 0 - не пройдено, 1 - пройдено</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="DM4Result" type="xs:integer" minOccurs="0">
+			<xs:element name="DM4Result" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Результат проверки "Проверка платежеспособности". 0 - не пройдено, 1 - пройдено</xs:documentation>
 				</xs:annotation>
@@ -108,7 +108,7 @@
 					<xs:documentation>Ставка</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Term" type="xs:integer" minOccurs="0">
+			<xs:element name="Term" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Период в месяцах</xs:documentation>
 				</xs:annotation>

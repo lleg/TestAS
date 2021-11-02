@@ -548,12 +548,12 @@
 					<xs:documentation>Дата начало работы</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="LastJobExperienceMonths" type="xs:integer" minOccurs="0">
+			<xs:element name="LastJobExperienceMonths" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Стаж на последнем месте работы в месяцах</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TotalJobExperienceMonths" type="xs:integer" minOccurs="0">
+			<xs:element name="TotalJobExperienceMonths" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Общий трудовой стаж в месяцах</xs:documentation>
 				</xs:annotation>
@@ -693,12 +693,12 @@
 					<xs:documentation>ИНН работодателя</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Year" type="xs:integer" minOccurs="0">
+			<xs:element name="Year" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Год получения данных о заработной плате</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Month" type="xs:integer" minOccurs="0">
+			<xs:element name="Month" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Месяц получения данных о заработной плате</xs:documentation>
 				</xs:annotation>

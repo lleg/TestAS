@@ -31,7 +31,7 @@
 					<xs:documentation>Цель кредитования</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TermInMonth" type="xs:integer" minOccurs="0">
+			<xs:element name="TermInMonth" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Количество месяцев на кредит</xs:documentation>
 				</xs:annotation>
@@ -46,7 +46,7 @@
 					<xs:documentation>Дата начала кредита</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="RepaymentDay" type="xs:integer" minOccurs="0">
+			<xs:element name="RepaymentDay" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>День ежемесячного погашения</xs:documentation>
 				</xs:annotation>
@@ -91,7 +91,7 @@
 					<xs:documentation>Флаг наличия льгот по погашению кредита</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="MaxDeferralRepaymentPeriod" type="xs:integer" minOccurs="0">
+			<xs:element name="MaxDeferralRepaymentPeriod" type="xs:int" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Максимальный срок отсрочки по продукту</xs:documentation>
 				</xs:annotation>
