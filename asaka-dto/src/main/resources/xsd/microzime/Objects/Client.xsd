@@ -185,6 +185,11 @@
 					<xs:documentation>Клиент достиг пенсионного возраста?</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="NinpsAccount" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Счет НИНПС</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="NinpsAccountBank" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Банк в котором открыт счет НИНПС</xs:documentation>
